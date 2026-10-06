@@ -60,9 +60,9 @@
   <section class="acquisitions">
     <h2>NEW ACQUISITIONS</h2>
     <div class="carousel-wrapper">
-      <button class="carousel-arrow" id="prevBtn" aria-label="Previous">←</button>
+      <button class="carousel-arrow" aria-label="Previous">←</button>
       <div class="carousel-track-container">
-        <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-track">
           <div class="book-card"><div class="book-cover">Cover</div><span>Book 1</span></div>
           <div class="book-card"><div class="book-cover">Cover</div><span>Book 2</span></div>
           <div class="book-card"><div class="book-cover">Cover</div><span>Book 3</span></div>
@@ -74,9 +74,9 @@
           <div class="book-card"><div class="book-cover">Cover</div><span>Book 9</span></div>
         </div>
       </div>
-      <button class="carousel-arrow" id="nextBtn" aria-label="Next">→</button>
+      <button class="carousel-arrow" aria-label="Next">→</button>
     </div>
-    <div class="carousel-dots" id="carouselDots">
+    <div class="carousel-dots">
       <button class="dot active"></button>
       <button class="dot"></button>
       <button class="dot"></button>
@@ -96,30 +96,6 @@
       Web Development Project
     </div>
   </footer>
-
-  <script>
-    const track = document.getElementById('carouselTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dots = document.querySelectorAll('.carousel-dots .dot');
-    const scrollAmount = 260;
-
-    nextBtn.addEventListener('click', () => {
-      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-
-    prevBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        track.scrollTo({ left: index * scrollAmount, behavior: 'smooth' });
-        dots.forEach(d => d.classList.remove('active'));
-        dot.classList.add('active');
-      });
-    });
-  </script>
 
 </body>
 </html>
