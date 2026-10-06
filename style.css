@@ -1,0 +1,13 @@
+:root {
+    --primary:#0C00AE
+    --secondary:#1653E1
+    --font-family: 'Inter', sans-serif;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
