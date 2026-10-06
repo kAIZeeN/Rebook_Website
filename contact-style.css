@@ -355,7 +355,7 @@ form {
 .field label {
   display: block;
 
-  font-size: 0.65rem;
+  font-size: 0.72rem;
 
   font-weight: 600;
 
@@ -379,7 +379,7 @@ form {
 
   font-family: inherit;
 
-  font-size: 0.68rem;
+  font-size: 0.72rem;
 
   color: var(--charcoal);
 
@@ -483,7 +483,7 @@ form {
 
   font-family: inherit;
 
-  font-size: 0.7rem;
+  font-size: 0.85rem;
 
   font-weight: 500;
 
@@ -589,26 +589,30 @@ footer {
 
 /* ----- Left Footer ----- */
 
-.footer-left {
-  font-size: 0.62rem;
+.site-footer {
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px 60px;
+  flex-wrap: wrap;
+}
 
+.site-footer .footer-left,
+.site-footer .footer-right {
   font-weight: 700;
-
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
-
-/* ----- Right Footer ----- */
-
-.footer-right {
+.site-footer .footer-right {
   text-align: right;
-
-  font-size: 0.62rem;
-
-  font-weight: 600;
-
-  line-height: 1.4;
 }
+
+.site-footer .footer-right {
+    text-align: center;
+  }
 
 
 /* =========================================================
