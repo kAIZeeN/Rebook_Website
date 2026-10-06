@@ -516,14 +516,13 @@ form {
   gap: 25px;
 }
 
-
-/* ----- Individual Contact Item ----- */
-
 .contact-item {
   display: flex;
   align-items: center;
   gap: 18px;
 }
+
+/* Icons */
 
 .contact-item i {
   width: 30px;
@@ -532,14 +531,35 @@ form {
   flex-shrink: 0;
 }
 
+/* Contact links */
+
+.contact-item a {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+/* Phone number */
+
 .contact-item span {
   font-size: 0.95rem;
   font-weight: 700;
   color: #111;
 }
 
+/* Hover effect for links */
 
-/* ----- Social Media Colors ----- */
+.contact-item a:hover {
+  color: var(--royal-blue);
+  text-decoration: underline;
+}
+
+
+/* Social Media Colors */
 
 .facebook {
   color: #1877F2;
