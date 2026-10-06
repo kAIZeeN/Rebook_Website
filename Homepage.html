@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReBook - Empower a Mind, One Book at a Time</title>
+<link rel="stylesheet" href="homepage-style.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <a href="#" class="brand">
+      <img class="brand-icon" src="asset/ReBook-Logo-nobg.png" alt="ReBook logo">
+      ReBook
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">About Us <span class="caret">▾</span></li>
+      <li><a href="#">Books</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><button class="donate-btn">Donate</button></li>
+    </ul>
+
+    <div class="navbar-right">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input type="text" placeholder="Search for a book">
+      </div>
+      <a href="#" class="profile-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="8" r="4" stroke="white" stroke-width="2"/>
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>EMPOWER A MIND,<br>ONE BOOK AT A TIME.</h1>
+      <p>
+        Your donated books can help fill our shelves by donating old unused
+        books. Help us make knowledge accessible for every person who wants
+        to learn.
+      </p>
+      <button class="hero-cta">Donate now</button>
+    </div>
+    <div class="hero-image">
+      <img src="asset/Elijah-Homepage-nobg.png" alt="Student reading a donated book">
+    </div>
+  </section>
+
+  <!-- ===== New Acquisitions ===== -->
+  <section class="acquisitions">
+    <h2>NEW ACQUISITIONS</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow" id="prevBtn" aria-label="Previous">←</button>
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 1</span></div>
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 2</span></div>
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 3</span></div>
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 4</span></div>
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 5</span></div>
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 6</span></div>
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 7</span></div>
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 8</span></div>
+          <div class="book-card"><div class="book-cover">Cover</div><span>Book 9</span></div>
+        </div>
+      </div>
+      <button class="carousel-arrow" id="nextBtn" aria-label="Next">→</button>
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <button class="dot active"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      Write a new chapter.<br>
+      Support our mission.
+    </div>
+    <div class="footer-right">
+      © 2026 ReBook. All rights reserved<br>
+      Web Development Project
+    </div>
+  </footer>
+
+  <script>
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    const scrollAmount = 260;
+
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        track.scrollTo({ left: index * scrollAmount, behavior: 'smooth' });
+        dots.forEach(d => d.classList.remove('active'));
+        dot.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
