@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Borrow Request Sent | ReBook</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/borrow-confirmation.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="ReBook home">
+        <!-- put your logo here: assets/images/logo.png -->
+        <span class="img-slot brand__logo" style="--ratio:1/1" data-label="LOGO&#10;logo.png"><span class="img-slot__img" style="background-image:url('assets/images/logo.png')"></span></span>
+        <span class="brand__name">ReBook</span>
+      </a>
+
+      <input class="nav-toggle-input" type="checkbox" id="nav-check" aria-label="Toggle menu">
+
+      <div class="header-menu">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-submenu">
+              <a href="about.html">About Us</a>
+              <span class="submenu-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              <ul class="submenu">
+                <li><a href="how-it-works.html">How it works</a></li>
+              </ul>
+            </li>
+            <li><a href="books.html" aria-current="page">Books</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a class="btn-donate" href="donate.html">Donate</a></li>
+          </ul>
+        </nav>
+        <form class="search" role="search" action="books.html" method="get">
+          <label class="sr-only" for="site-search">Search for a book</label>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="site-search" type="search" name="q" placeholder="Search for a book">
+        </form>
+      </div>
+
+      <a class="account" href="login.html" aria-label="My account"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><circle cx="24" cy="24" r="21"/><circle cx="24" cy="19" r="7" fill="currentColor"/><path d="M10 38c3-7 8-9 14-9s11 2 14 9" fill="currentColor"/></svg></a>
+      <label class="nav-toggle" for="nav-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menu</span></label>
+    </div>
+  </header>
+
+  <main id="main" class="container" style="padding-block:1rem">
+    <section class="confirm" aria-labelledby="confirm-title">
+      <div class="confirm__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
+      <h1 id="confirm-title">Borrow request sent!</h1>
+      <p class="confirm__lead">The book is now reserved for you while the team prepares it.</p>
+
+      <!-- sample info for now -->
+      <dl class="summary"><div class="summary__row"><dt>Book title</dt><dd>Sons of the Sword (Featured Story)</dd></div><div class="summary__row"><dt>Status</dt><dd><span class="pill-badge pill-badge--reserved">Reserved</span></dd></div><div class="summary__row"><dt>Preferred schedule</dt><dd>October 12, 2026</dd></div><div class="summary__row"><dt>Loan period</dt><dd>To be confirmed by the administrator</dd></div><div class="summary__row"><dt>Reference no.</dt><dd>RB-BR-2026-0012</dd></div></dl>
+
+      <div class="next-steps">
+        <h2>What happens next</h2>
+        <ol>
+          <li>An administrator confirms your schedule by email or phone.</li>
+          <li>The status changes to Borrowed once you receive the book.</li>
+        </ol>
+      </div>
+      <div class="confirm__actions">
+        <a class="btn" href="books.html">Browse more books</a>
+        <a class="btn btn--outline" href="index.html">Back to Home</a>
+      </div>
+    </section>
+  </main>
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Write a new chapter.<br>Support our mission.</p>
+      <p class="site-footer__right">&copy; 2026 ReBook. All rights reserved<br>Web Development Project</p>
+    </div>
+  </footer>
+</body>
+</html>

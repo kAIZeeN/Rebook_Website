@@ -1,0 +1,88 @@
+/* header and footer */
+
+/* header */
+.site-header { background: var(--navy); color: var(--white); position: relative; z-index: 20; }
+
+.site-header__inner {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .75rem 1.25rem; padding-block: .85rem;
+}
+
+.brand { display: flex; align-items: center; gap: .75rem; color: var(--white); text-decoration: none; }
+.brand__logo { width: 56px; height: 56px; flex: none; background: transparent; }
+.img-slot.brand__logo::before { content: "LOGO"; font-size: .6rem; border-width: 1px; inset: 0; padding: 0; }
+.brand__name { font-size: 2.25rem; font-weight: 800; letter-spacing: .01em; line-height: 1; }
+
+.header-menu { display: flex; align-items: center; gap: 1.25rem; flex: 1; }
+
+/* primary navigation */
+.primary-nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 1.1rem; }
+.primary-nav a, .submenu-toggle { color: var(--white); text-decoration: none; font-size: 1.05rem; }
+.primary-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.primary-nav a[aria-current="page"] { font-weight: 700; }
+
+.btn-donate {
+  background: var(--cyan); padding: .35rem .7rem; border-radius: 6px; font-weight: 500;
+}
+.primary-nav a.btn-donate:hover { text-decoration: none; filter: brightness(1.08); }
+
+/* "About Us" dropdown */
+.has-submenu { position: relative; display: flex; align-items: center; gap: .15rem; }
+.submenu-toggle {
+  padding: .25rem; display: grid; place-items: center; pointer-events: none;
+}
+.submenu-toggle svg { width: 16px; height: 16px; transition: transform .2s; }
+.has-submenu.is-open .submenu-toggle svg,
+.has-submenu:hover .submenu-toggle svg, .has-submenu:focus-within .submenu-toggle svg { transform: rotate(180deg); }
+
+.primary-nav .submenu {
+  display: none; position: absolute; top: calc(100% + .5rem); left: 0; min-width: 11rem;
+  background: var(--navy); border: 1px solid rgba(255,255,255,.35); border-radius: var(--radius);
+  padding: .5rem .9rem; flex-direction: column; align-items: flex-start; gap: .4rem;
+}
+.primary-nav .has-submenu.is-open .submenu,
+.primary-nav .has-submenu:hover .submenu,
+.primary-nav .has-submenu:focus-within .submenu { display: flex; }
+
+/* search */
+.search { margin-left: auto; position: relative; flex: 0 1 330px; }
+.search input {
+  width: 100%; height: 2.75rem; border-radius: 999px; border: 1px solid var(--line);
+  padding: 0 1rem 0 2.5rem; font: inherit; font-size: .95rem; color: var(--ink); background: var(--white);
+}
+.search svg { position: absolute; left: .9rem; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--ink); }
+
+.account { color: var(--white); display: grid; place-items: center; }
+.account svg { width: 48px; height: 48px; }
+
+.nav-toggle-input { position: absolute; opacity: 0; pointer-events: none; }
+.nav-toggle-input:focus-visible ~ .nav-toggle { outline: 3px solid var(--cyan); outline-offset: 2px; }
+.nav-toggle {
+  display: none; cursor: pointer; background: none; border: 2px solid var(--white); color: var(--white);
+  border-radius: var(--radius); padding: .4rem; cursor: pointer;
+}
+.nav-toggle svg { width: 24px; height: 24px; }
+
+/* header: tablet / mobile */
+@media (max-width: 960px) {
+  .brand__name { font-size: 1.8rem; }
+  .brand__logo { width: 44px; height: 44px; }
+  .account { margin-left: auto; }
+  .account svg { width: 40px; height: 40px; }
+  .nav-toggle { display: block; }
+
+  .header-menu { display: none; order: 5; flex-basis: 100%; flex-direction: column; align-items: stretch; gap: 1rem; }
+  .nav-toggle-input:checked ~ .header-menu { display: flex; }
+  .primary-nav .submenu { display: flex; }
+  .primary-nav ul { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  .primary-nav .submenu { position: static; border: 0; padding: .25rem 0 0 1rem; min-width: 0; flex-basis: 100%; }
+  .has-submenu { flex-wrap: wrap; }
+  .search { margin-left: 0; flex-basis: auto; }
+}
+
+/* footer */
+.site-footer { background: var(--navy); color: var(--white); padding-block: 1.75rem; font-weight: 700; }
+.site-footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.site-footer p { margin: 0; line-height: 1.4; }
+.site-footer__right { text-align: right; }
+@media (max-width: 600px) { .site-footer__right { text-align: left; } }

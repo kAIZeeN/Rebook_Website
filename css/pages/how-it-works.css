@@ -1,0 +1,22 @@
+/* 4-step curation process */
+.hiw-title { text-align: center; max-width: 40ch; margin: 0 auto 2rem; }
+.hiw-title span { display: block; }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media (min-width: 640px)  { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+
+.step { display: flex; flex-direction: column; align-items: center; gap: .9rem; }
+.step__label {
+  background: var(--blue); color: var(--white); font-weight: 700; font-size: .95rem;
+  padding: .25rem .9rem; border-radius: 6px;
+}
+.step__media { --ratio: 1 / 1; width: 100%; --fit: contain; background: var(--white); }
+.step__body {
+  width: 100%; flex: 1; background: var(--blue); color: var(--white);
+  border-radius: 0 0 var(--radius) var(--radius); padding: 1rem 1.1rem;
+}
+.step__body ul { list-style: disc; margin: 0; padding-left: 1.1rem; display: grid; gap: .6rem; font-size: .9rem; font-weight: 600; }
+
+.hiw-cta { text-align: center; margin-top: 2.5rem; }
+.hiw-cta p { margin-bottom: 1rem; }
