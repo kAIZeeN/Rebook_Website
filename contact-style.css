@@ -590,50 +590,47 @@ form {
    FOOTER
 ========================================================= */
 
-footer {
-  min-height: 65px;
-
-  background: var(--navy);
-
-  color: var(--white);
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  padding: 10px 40px;
-}
-
-
-/* ----- Left Footer ----- */
-
 .site-footer {
-  background: var(--navy);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 28px 60px;
-  flex-wrap: wrap;
+    width: 100%;
+    min-height: 70px;
+
+    background: var(--navy);
+    color: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 14px 40px;
+
+    flex-shrink: 0;
 }
+
+
+/* ----- Footer Text ----- */
 
 .site-footer .footer-left,
 .site-footer .footer-right {
-  font-weight: 700;
-  line-height: 1.6;
+    font-weight: 700;
+    line-height: 1.4;
+    font-size: 0.75rem;
 }
 
-.site-footer .footer-right {
-  text-align: right;
+
+/* ----- Left ----- */
+
+.site-footer .footer-left {
+    text-align: left;
 }
 
-.site-footer .footer-right {
-    text-align: center;
-  }
 
+/* ----- Right ----- */
+
+.site-footer .footer-right {
+    text-align: right;
+}
 
 /* =========================================================
    TABLET
