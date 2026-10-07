@@ -38,7 +38,7 @@
 .has-submenu:hover .submenu-toggle svg, .has-submenu:focus-within .submenu-toggle svg { transform: rotate(180deg); }
 
 .primary-nav .submenu {
-  display: none; position: absolute; top: calc(100% + .5rem); left: 0; min-width: 11rem;
+  display: none; position: absolute; top: 100%; left: 0; min-width: 11rem;
   background: var(--navy); border: 1px solid rgba(255,255,255,.35); border-radius: var(--radius);
   padding: .5rem .9rem; flex-direction: column; align-items: flex-start; gap: .4rem;
 }
