@@ -44,6 +44,14 @@ img {
   flex-wrap: wrap;
 }
 
+.navbar .mobile-nav-toggle-input {
+  display: none;
+}
+
+.navbar .mobile-nav-toggle {
+  display: none;
+}
+
 .navbar .brand {
   display: flex;
   align-items: center;
@@ -341,6 +349,7 @@ img {
 
 @media (max-width: 768px) {
   .navbar .mobile-nav-toggle-input {
+    display: block;
     position: absolute;
     width: 1px;
     height: 1px;
