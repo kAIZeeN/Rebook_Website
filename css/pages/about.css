@@ -1,0 +1,11 @@
+/* about Us page */
+.about-intro { display: grid; gap: 2rem; align-items: start; }
+.about-intro__media { --ratio: 570 / 242; border-radius: 4px; }
+.about-pair { display: grid; gap: 2rem; }
+.about-block h2 { margin-bottom: .5rem; }
+.about-cta { padding-bottom: clamp(2rem, 6vw, 4rem); }
+
+@media (min-width: 800px) {
+  .about-intro { grid-template-columns: 1.1fr 1fr; gap: 3rem; }
+  .about-pair  { grid-template-columns: 1fr 1fr; gap: 3rem; }
+}

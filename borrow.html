@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Borrow a Book | ReBook</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/borrow.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="ReBook home">
+        <!-- put your logo here: assets/images/ReBook-Logo-nobg.png -->
+        <span class="img-slot brand__logo" style="--ratio:1/1" data-label="LOGO&#10;ReBook-Logo-nobg.png"><span class="img-slot__img" style="background-image:url('assets/images/ReBook-Logo-nobg.png')"></span></span>
+        <span class="brand__name">ReBook</span>
+      </a>
+
+      <input class="nav-toggle-input" type="checkbox" id="nav-check" aria-label="Toggle menu">
+
+      <div class="header-menu">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-submenu">
+              <a href="about.html">About Us</a>
+              <span class="submenu-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              <ul class="submenu">
+                <li><a href="how-it-works.html">How it works</a></li>
+              </ul>
+            </li>
+            <li><a href="books.html" aria-current="page">Books</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a class="btn-donate" href="donate.html">Donate</a></li>
+          </ul>
+        </nav>
+        <form class="search" role="search" action="books.html" method="get">
+          <label class="sr-only" for="site-search">Search for a book</label>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="site-search" type="search" name="q" placeholder="Search for a book">
+        </form>
+      </div>
+
+      <a class="account" href="login.html" aria-label="My account"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><circle cx="24" cy="24" r="21"/><circle cx="24" cy="19" r="7" fill="currentColor"/><path d="M10 38c3-7 8-9 14-9s11 2 14 9" fill="currentColor"/></svg></a>
+      <label class="nav-toggle" for="nav-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menu</span></label>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div class="borrow-card">
+      <div>
+        <div class="borrow-card__cover">
+          <!-- put your image here: assets/images/books/sons-of-the-sword.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of Sons of the Sword" data-label="BOOK COVER&#10;assets/images/books/sons-of-the-sword.png"><span class="img-slot__img" style="background-image:url('assets/images/books/sons-of-the-sword.png')"></span></div>
+        </div>
+        <p class="borrow-card__book">Sons of the Sword (Featured Story)</p>
+      </div>
+
+      <section aria-labelledby="borrow-title">
+        <h1 id="borrow-title">Borrow Details</h1>
+
+        <!-- the browser checks the required fields, then opens the confirmation page -->
+        <form action="borrow-confirmation.html" method="get">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" name="fullName" type="text" required minlength="3" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="city">City/Municipality</label>
+              <input id="city" name="city" type="text" required autocomplete="address-level2">
+            </div>
+            <div class="field">
+              <label for="barangay">Barangay</label>
+              <input id="barangay" name="barangay" type="text" required >
+            </div>
+            <div class="field">
+              <label for="postalCode">Postal Code</label>
+              <input id="postalCode" name="postalCode" type="text" required inputmode="numeric" maxlength="4" pattern="[0-9]{4}" title="Enter a 4-digit postal code, e.g. 1000" autocomplete="postal-code">
+            </div>
+            <div class="field">
+              <label for="address">Home Address</label>
+              <input id="address" name="address" type="text" required minlength="5" autocomplete="street-address">
+            </div>
+            <div class="field">
+              <label for="schedule">Borrow Schedule</label>
+              <!-- change the min date later -->
+              <input id="schedule" name="schedule" type="date" min="2026-10-07" required>
+            </div>
+
+            <div class="field field--check">
+              <input id="consent" name="consent" type="checkbox" required>
+              <label for="consent" style="font-weight:400">I agree to the collection and use of my personal information as stated in the <a href="privacy.html">Privacy Notice</a>.</label>
+            </div>
+
+            <div class="form-actions"><button class="btn" type="submit">Submit</button></div>
+          </form>
+        </section>
+    </div>
+  </main>
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Write a new chapter.<br>Support our mission.</p>
+      <p class="site-footer__right">&copy; 2026 ReBook. All rights reserved<br>Web Development Project</p>
+    </div>
+  </footer>
+</body>
+</html>
