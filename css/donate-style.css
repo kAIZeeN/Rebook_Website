@@ -18,7 +18,7 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   color: var(--charcoal);
-  background: var(--white);
+  background: #efefef;
 }
 
 
@@ -707,11 +707,16 @@ display: flex;
 .donation-payment-wrapper {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-content: center;
+    align-items: center;
+    justify-items: center;
     width: calc(100% - 40px);
     max-width: 1200px;
+    min-height: 560px;
     padding: 8px 20px 20px;
     margin: 20px auto;
+    background: #f3f3f3;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
     overflow: visible;
 }
 
@@ -719,6 +724,8 @@ display: flex;
     grid-column: 1;
     min-width: 0;
     padding: 12px;
+    align-self: center;
+    width: 100%;
 }
 
 .payment-button,
@@ -758,6 +765,8 @@ display: flex;
     grid-column: 2;
     min-width: 0;
     padding: 12px;
+    align-self: center;
+    width: 100%;
 }
 
 .donate-money-form-title {
@@ -812,8 +821,8 @@ display: flex;
 }
 
 .payment-method-image {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
 
@@ -821,4 +830,307 @@ display: flex;
     .donation-payment-wrapper {
         grid-template-columns: 1fr;
     }
+}
+
+/* Consistent site header and footer across page-specific stylesheets */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #0C00AE;
+  color: #FFFFFF;
+  padding: 12px 40px;
+  min-height: 72px;
+  flex-wrap: wrap;
+}
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.navbar .brand-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.navbar .nav-links li {
+  white-space: nowrap;
+}
+
+.navbar .nav-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links .dropdown:hover {
+  opacity: 0.75;
+}
+
+.navbar .nav-links .dropdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.navbar .nav-links .caret {
+  font-size: 0.7rem;
+}
+
+.navbar .donate-btn {
+  background: #10BFFF;
+  color: #FFFFFF;
+  font: inherit;
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navbar .donate-btn:hover {
+  background: #08a9df;
+  transform: translateY(-1px);
+}
+
+.navbar .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar .search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 220px;
+  height: 36px;
+  padding: 7px 14px;
+  background: #FFFFFF;
+  border-radius: 24px;
+}
+
+.navbar .search-box input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  color: #2C2C2C;
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.navbar .search-box input::placeholder,
+.navbar .search-box svg {
+  color: #999999;
+}
+
+.navbar .search-box svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.navbar .profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.navbar .profile-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar .profile-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #FFFFFF;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  min-height: 70px;
+  padding: 14px 40px;
+  flex-shrink: 0;
+  background: #0C00AE;
+  color: #FFFFFF;
+}
+
+.site-footer .footer-left,
+.site-footer .footer-right {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.site-footer .footer-left {
+  text-align: left;
+}
+
+.site-footer .footer-right {
+  text-align: right;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    gap: 15px;
+    padding: 12px 25px;
+  }
+
+  .navbar .nav-links {
+    gap: 16px;
+    font-size: 0.75rem;
+  }
+
+  .navbar .search-box {
+    width: 180px;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar .brand {
+    margin-right: auto;
+  }
+
+  .navbar .navbar-right {
+    margin-left: auto;
+  }
+
+  .navbar .nav-links {
+    order: 3;
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: center;
+    padding-top: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    gap: 12px;
+    padding: 12px 18px;
+  }
+
+  .navbar .brand {
+    font-size: 1.25rem;
+  }
+
+  .navbar .brand-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar .navbar-right {
+    gap: 9px;
+  }
+
+  .navbar .search-box {
+    width: 145px;
+    height: 32px;
+    padding: 6px 10px;
+  }
+
+  .navbar .search-box input {
+    font-size: 0.65rem;
+  }
+
+  .navbar .search-box svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .navbar .profile-icon {
+    width: 31px;
+    height: 31px;
+  }
+
+  .navbar .nav-links {
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 3px;
+    font-size: 0.68rem;
+  }
+
+  .navbar .donate-btn {
+    padding: 6px 12px;
+    font-size: 0.68rem;
+  }
+
+  .site-footer {
+    min-height: 65px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 18px;
+  }
+
+  .site-footer .footer-left,
+  .site-footer .footer-right {
+    font-size: 0.6rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar .brand {
+    font-size: 1.1rem;
+  }
+
+  .navbar .brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navbar .search-box {
+    width: 125px;
+  }
+
+  .navbar .nav-links {
+    gap: 9px;
+    font-size: 0.6rem;
+  }
+
+  .site-footer {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
