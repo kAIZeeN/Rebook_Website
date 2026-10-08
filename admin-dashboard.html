@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReBook Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin-dashboard-style.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <div class="brand" aria-label="ReBook Admin brand">
+        <img
+          class="brand-mark"
+          src="assets/images/ReBook-Logo-nobg.png"
+          alt="ReBook logo"
+        />
+        <span>ReBook Admin</span>
+      </div>
+
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Users</a>
+        <details class="nav-dropdown">
+          <summary>Books</summary>
+          <div class="nav-dropdown__menu">
+            <a href="#">Borrow Request</a>
+          </div>
+        </details>
+        <a href="#">Donations</a>
+      </nav>
+
+      <a href="admin-login.html" class="logout-link">
+        <button class="logout-button" type="button">Log Out</button>
+      </a>
+    </header>
+
+    <main class="admin-main">
+      <h1>Welcome back, Admin!</h1>
+
+      <section class="stats-grid" aria-label="Admin statistics">
+        <article class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <path d="M14 18.5C14 15.4 16.4 13 19.5 13H44c3.1 0 5.5 2.4 5.5 5.5v29.5c0 1.7-1.3 3-3 3H19.5A5.5 5.5 0 0 1 14 40.5V18.5Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M19.5 18.5h25v29.5M23 28h17M23 35h17" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-value">12,500</div>
+          <div class="stat-label">Books</div>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <circle cx="32" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
+              <path d="M17 48c1.2-7.5 7.1-12 15-12s13.8 4.5 15 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M46 19.5a9 9 0 0 1 0 18M18 19.5a9 9 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-value">9,500</div>
+          <div class="stat-label">Users</div>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <path d="M19 26.5V20c0-4.4 3.6-8 8-8h10c4.4 0 8 3.6 8 8v6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M16 26.5h32l-3.2 22.5H19.2L16 26.5Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M25 35h14M29 29h6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-value">10,200</div>
+          <div class="stat-label">Funds</div>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <path d="M14 18.5C14 15.4 16.4 13 19.5 13H44c3.1 0 5.5 2.4 5.5 5.5v29.5c0 1.7-1.3 3-3 3H19.5A5.5 5.5 0 0 1 14 40.5V18.5Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M19.5 18.5h25v29.5M23 28h17M23 35h17" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-value">100</div>
+          <div class="stat-label">Times Book Returned</div>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <circle cx="32" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
+              <path d="M17 48c1.2-7.5 7.1-12 15-12s13.8 4.5 15 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M46 19.5a9 9 0 0 1 0 18M18 19.5a9 9 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-value">3,600</div>
+          <div class="stat-label">Donors</div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

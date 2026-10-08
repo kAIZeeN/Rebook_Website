@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Users | ReBook</title>
+    <link rel="stylesheet" href="css/admin-users-style.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <a class="brand" href="admin-dashboard.html" aria-label="ReBook Admin dashboard">
+        <img class="brand-mark" src="assets/images/ReBook-Logo-nobg.png" alt="" />
+        <span>ReBook Admin</span>
+      </a>
+
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-users.html" class="active" aria-current="page">Users</a>
+        <details class="nav-dropdown">
+          <summary>Books</summary>
+          <div class="nav-dropdown__menu">
+            <a href="#">Borrow Request</a>
+          </div>
+        </details>
+        <a href="#">Donations</a>
+      </nav>
+
+      <a href="admin-login.html" class="logout-button">Log Out</a>
+    </header>
+
+    <nav class="admin-subnav" aria-label="User status categories">
+      <span class="subnav-tab active" aria-current="page">Active</span>
+      <span class="subnav-tab">New</span>
+      <span class="subnav-tab">Staff</span>
+      <span class="subnav-tab">Suspended</span>
+      <span class="subnav-tab">Blocked</span>
+    </nav>
+
+    <main class="users-main" id="active-users">
+      <h1 class="admin-users__title">Active Users</h1>
+
+      <label class="search-label" for="user-search">Search by username</label>
+      <input id="user-search" class="user-search" type="search" placeholder="Username" />
+
+      <div class="table-scroll">
+        <table class="admin-users__table">
+          <thead>
+            <tr>
+              <th scope="col">Username</th>
+              <th scope="col">Email</th>
+              <th scope="col">Books Donated</th>
+              <th scope="col">Registration Date</th>
+              <th scope="col">Last Active</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="username-cell"><span class="user-avatar" aria-hidden="true">E</span>Example_123</span></td>
+              <td>example@gmail.com</td>
+              <td>5</td>
+              <td>2025-09-11</td>
+              <td>2026-08-12</td>
+              <td>
+                <div class="row-actions" aria-label="Actions for Example_123">
+                  <span class="icon-button edit-action" role="img" aria-label="Edit" title="Edit">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16.5-.8 4.3 4.3-.8L19.8 7.7a2.1 2.1 0 0 0-3-3L4 16.5Z"/><path d="m14.9 6.6 3 3"/></svg>
+                  </span>
+                  <span class="icon-button block-action" role="img" aria-label="Block" title="Block">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></svg>
+                  </span>
+                  <span class="icon-button view-action" role="img" aria-label="View" title="View">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="username-cell"><span class="user-avatar" aria-hidden="true">B</span>BookLover24</span></td>
+              <td>reader24@gmail.com</td>
+              <td>12</td>
+              <td>2025-10-03</td>
+              <td>2026-08-10</td>
+              <td>
+                <div class="row-actions" aria-label="Actions for BookLover24">
+                  <span class="icon-button edit-action" role="img" aria-label="Edit" title="Edit">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16.5-.8 4.3 4.3-.8L19.8 7.7a2.1 2.1 0 0 0-3-3L4 16.5Z"/><path d="m14.9 6.6 3 3"/></svg>
+                  </span>
+                  <span class="icon-button block-action" role="img" aria-label="Block" title="Block">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></svg>
+                  </span>
+                  <span class="icon-button view-action" role="img" aria-label="View" title="View">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="username-cell"><span class="user-avatar" aria-hidden="true">H</span>Hal_jordan</span></td>
+              <td>inblackestnight@gmail.com</td>
+              <td>8</td>
+              <td>2025-11-19</td>
+              <td>2026-08-08</td>
+              <td>
+                <div class="row-actions" aria-label="Actions for Hal_jordan">
+                  <span class="icon-button edit-action" role="img" aria-label="Edit" title="Edit">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16.5-.8 4.3 4.3-.8L19.8 7.7a2.1 2.1 0 0 0-3-3L4 16.5Z"/><path d="m14.9 6.6 3 3"/></svg>
+                  </span>
+                  <span class="icon-button block-action" role="img" aria-label="Block" title="Block">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></svg>
+                  </span>
+                  <span class="icon-button view-action" role="img" aria-label="View" title="View">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="username-cell"><span class="user-avatar" aria-hidden="true">P</span>PageTurner</span></td>
+              <td>page.turner@gmail.com</td>
+              <td>3</td>
+              <td>2026-01-07</td>
+              <td>2026-08-05</td>
+              <td>
+                <div class="row-actions" aria-label="Actions for PageTurner">
+                  <span class="icon-button edit-action" role="img" aria-label="Edit" title="Edit">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16.5-.8 4.3 4.3-.8L19.8 7.7a2.1 2.1 0 0 0-3-3L4 16.5Z"/><path d="m14.9 6.6 3 3"/></svg>
+                  </span>
+                  <span class="icon-button block-action" role="img" aria-label="Block" title="Block">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></svg>
+                  </span>
+                  <span class="icon-button view-action" role="img" aria-label="View" title="View">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="username-cell"><span class="user-avatar" aria-hidden="true">N</span>NovelFan</span></td>
+              <td>novel.fan@gmail.com</td>
+              <td>6</td>
+              <td>2025-12-04</td>
+              <td>2026-08-03</td>
+              <td>
+                <div class="row-actions" aria-label="Actions for NovelFan">
+                  <span class="icon-button edit-action" role="img" aria-label="Edit" title="Edit">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16.5-.8 4.3 4.3-.8L19.8 7.7a2.1 2.1 0 0 0-3-3L4 16.5Z"/><path d="m14.9 6.6 3 3"/></svg>
+                  </span>
+                  <span class="icon-button block-action" role="img" aria-label="Block" title="Block">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></svg>
+                  </span>
+                  <span class="icon-button view-action" role="img" aria-label="View" title="View">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="username-cell"><span class="user-avatar" aria-hidden="true">J</span>Junior</span></td>
+              <td>study.buddy@gmail.com</td>
+              <td>10</td>
+              <td>2026-02-16</td>
+              <td>2026-08-02</td>
+              <td>
+                <div class="row-actions" aria-label="Actions for Junior">
+                  <span class="icon-button edit-action" role="img" aria-label="Edit" title="Edit">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16.5-.8 4.3 4.3-.8L19.8 7.7a2.1 2.1 0 0 0-3-3L4 16.5Z"/><path d="m14.9 6.6 3 3"/></svg>
+                  </span>
+                  <span class="icon-button block-action" role="img" aria-label="Block" title="Block">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></svg>
+                  </span>
+                  <span class="icon-button view-action" role="img" aria-label="View" title="View">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-controls">
+        <span class="page-size">View <span class="page-size-value">4</span> items per page</span>
+        <nav class="pagination" aria-label="User table pagination">
+          <span aria-hidden="true">&laquo;</span>
+          <span aria-hidden="true">&lsaquo;</span>
+          <span>Page 2 of 167</span>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span aria-hidden="true">&raquo;</span>
+        </nav>
+      </div>
+    </main>
+  </body>
+</html>
