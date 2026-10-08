@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How it Works | ReBook</title>
+  <meta name="description" content="The four-step ReBook curation system: donate, review, archive and share books.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/how-it-works.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="Homepage.html" aria-label="ReBook home">
+        <!-- put your logo here: assets/images/logo.png -->
+        <span class="img-slot brand__logo" style="--ratio:1/1" data-label="LOGO&#10;logo.png"><span class="img-slot__img" style="background-image:url('assets/images/ReBook-Logo-nobg.png')"></span></span>
+        <span class="brand__name">ReBook</span>
+      </a>
+
+      <input class="nav-toggle-input" type="checkbox" id="nav-check" aria-label="Toggle menu">
+
+      <div class="header-menu">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li class="has-submenu">
+              <a href="about.html">About Us</a>
+              <span class="submenu-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              <ul class="submenu">
+                <li><a href="how-it-works.html" aria-current="page">How it works</a></li>
+              </ul>
+            </li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a class="btn-donate" href="donate.html">Donate</a></li>
+          </ul>
+        </nav>
+        <form class="search" role="search" action="books.html" method="get">
+          <label class="sr-only" for="site-search">Search for a book</label>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="site-search" type="search" name="q" placeholder="Search for a book">
+        </form>
+      </div>
+
+      <a class="account" href="login_and_signup_page.html" aria-label="My account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg></a>
+      <label class="nav-toggle" for="nav-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menu</span></label>
+    </div>
+  </header>
+
+  <main id="main" class="section container">
+    <h1 class="hiw-title"><span>UNFOLDING OUR COMMUNITY</span><span>Curation System: How it Works</span></h1>
+    <ol class="steps">
+      <li class="step">
+        <h2 class="step__label">Step 1: Donate</h2>
+        <!-- put your image here: assets/images/steps/step-1-donate.png -->
+        <div class="img-slot step__media" style="--ratio:1 / 1" role="img" aria-label="People placing old books into a donation box" data-label="IMAGE GOES HERE&#10;assets/images/steps/step-1-donate.png"><span class="img-slot__img" style="background-image:url('assets/images/steps/step-1-donate.jpg')"></span></div>
+        <div class="step__body"><ul><li>Submit a physical book through donate.</li><li>Fill out the necessary info (book name, author, etc.).</li></ul></div>
+      </li>
+      <li class="step">
+        <h2 class="step__label">Step 2: Review</h2>
+        <!-- put your image here: assets/images/steps/step-2-review.png -->
+        <div class="img-slot step__media" style="--ratio:1 / 1" role="img" aria-label="A magnifying glass over a document on a laptop" data-label="IMAGE GOES HERE&#10;assets/images/steps/step-2-review.png"><span class="img-slot__img" style="background-image:url('assets/images/steps/step-2-review.png')"></span></div>
+        <div class="step__body"><ul><li>Admins check each book for quality, relevance, and authenticity.</li><li>Community feedback and expert oversight.</li></ul></div>
+      </li>
+      <li class="step">
+        <h2 class="step__label">Step 3: Archive</h2>
+        <!-- put your image here: assets/images/steps/step-3-archive.png -->
+        <div class="img-slot step__media" style="--ratio:1 / 1" role="img" aria-label="An open book above a glowing digital globe" data-label="IMAGE GOES HERE&#10;assets/images/steps/step-3-archive.png"><span class="img-slot__img" style="background-image:url('assets/images/steps/step-3-archive.png')"></span></div>
+        <div class="step__body"><ul><li>Books are categorized and stored in our digital archive.</li><li>Long-term preservation and digital security.</li></ul></div>
+      </li>
+      <li class="step">
+        <h2 class="step__label">Step 4: Share</h2>
+        <!-- put your image here: assets/images/steps/step-4-share.png -->
+        <div class="img-slot step__media" style="--ratio:1 / 1" role="img" aria-label="Hands passing a book to a reader" data-label="IMAGE GOES HERE&#10;assets/images/steps/step-4-share.png"><span class="img-slot__img" style="background-image:url('assets/images/steps/step-4-share.jpg')"></span></div>
+        <div class="step__body"><ul><li>The archive becomes a collaborative knowledge repository.</li><li>Discover, access, and discuss knowledge with others.</li></ul></div>
+      </li>
+    </ol>
+    <div class="hiw-cta">
+      <p>Ready to find your next read?</p>
+      <a class="btn" href="books.html">Browse the archive</a>
+    </div>
+  </main>
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Write a new chapter.<br>Support our mission.</p>
+      <p class="site-footer__right">&copy; 2026 ReBook. All rights reserved<br>Web Development Project</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebook Donate Books Details</title>
+    <link rel="stylesheet" href="css/donatebooks-details-style.css">
+</head>
+<body>
+   <header class="navbar">
+    <a href="Homepage.html" class="brand">
+      <img class="brand-icon" src="assets/images/ReBook-Logo-nobg.png" alt="ReBook logo">
+      ReBook
+    </a>
+
+    <input class="mobile-nav-toggle-input" type="checkbox" id="mobile-nav-donatebooks-details" aria-label="Toggle navigation">
+    <label class="mobile-nav-toggle" for="mobile-nav-donatebooks-details" aria-label="Open navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </label>
+
+    <ul class="nav-links">
+      <li><a href="Homepage.html">Home</a></li>
+      <li class="dropdown"><a href="about.html">About Us</a><span class="caret">▾</span>
+        <ul class="submenu"><li><a href="how-it-works.html">How it works</a></li></ul>
+      </li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="donate.html"><button class="donate-btn">Donate</button></a></li>
+    </ul>
+
+    <div class="navbar-right">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input type="text" placeholder="Search for a book">
+      </div>
+      <a href="login_and_signup_page.html" class="profile-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="8" r="4" stroke="white" stroke-width="2"/>
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <a href="donatebooks.html"><h3>Back</h3></a>
+
+
+  <main class="donation-wrapper">
+       <div class="book-info">
+        <h3>Book Information</h3>
+        <form class="book-info-form">
+            <select name="language" id="language">
+            <option value="english">English</option>
+            <option value="filipino">Filipino</option>
+            <option value="other">Other</option>
+            </select>
+            <input type="text" id="book-title" placeholder="Book Title" required>
+            <input type="text" id="subtitle" placeholder="Subtitle(Optional)">
+            <input type="text" id="author" placeholder="Author" required>
+            <input type="text" id="ISBN" placeholder="ISBN" required>
+            <select name="condition" id="condition">
+            <option value="new">New</option>
+            <option value="used">Used</option>
+            </select>
+            <select name="category" id="category">
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-Fiction</option>
+            <option value="educational">Educational</option>
+            <option value="other">Other</option>
+            </select>
+        </form>
+        </div>
+       
+       <section class="book-image">
+        <h3>Book Cover Image</h3>
+        <div class="book-image-upload">
+            <img class="book-image-preview" id="book-image-preview" alt="Selected book cover preview" hidden>
+            <input class="book-image-input" type="file" id="book-image" accept="image/*">
+            <label class="book-image-upload-button" for="book-image">Add Book Image (Optional)</label>
+        </div>
+        <label class="description-label" for="description">Description (Optional)</label>
+        <textarea id="description" placeholder="Write a brief description of the book..."></textarea>
+        <input type="submit" value="Submit" class="submit-button">
+       </section>
+       
+    </main>
+    
+
+    <footer class="site-footer">
+    <div class="footer-left">
+      Write a new chapter.<br>
+      Support our mission.
+    </div>
+    <div class="footer-right">
+      © 2026 ReBook. All rights reserved<br>
+      Web Development Project
+    </div>
+  </footer>
+  <script>
+    const bookImageInput = document.querySelector("#book-image");
+    const bookImagePreview = document.querySelector("#book-image-preview");
+    let bookImagePreviewUrl;
+
+    bookImageInput.addEventListener("change", () => {
+      const image = bookImageInput.files[0];
+      if (!image) return;
+
+      if (bookImagePreviewUrl) URL.revokeObjectURL(bookImagePreviewUrl);
+      bookImagePreviewUrl = URL.createObjectURL(image);
+      bookImagePreview.src = bookImagePreviewUrl;
+      bookImagePreview.hidden = false;
+    });
+  </script>
+</body>
+</html>

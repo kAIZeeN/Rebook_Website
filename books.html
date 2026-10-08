@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Books | ReBook</title>
+  <meta name="description" content="Browse donated books in the ReBook archive by status or category.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/books.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="Homepage.html" aria-label="ReBook home">
+        <!-- put your logo here: assets/images/logo.png -->
+        <span class="img-slot brand__logo" style="--ratio:1/1" data-label="LOGO&#10;logo.png"><span class="img-slot__img" style="background-image:url('assets/images/ReBook-Logo-nobg.png')"></span></span>
+        <span class="brand__name">ReBook</span>
+      </a>
+
+      <input class="nav-toggle-input" type="checkbox" id="nav-check" aria-label="Toggle menu">
+
+      <div class="header-menu">
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li class="has-submenu">
+              <a href="about.html">About Us</a>
+              <span class="submenu-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              <ul class="submenu">
+                <li><a href="how-it-works.html">How it works</a></li>
+              </ul>
+            </li>
+            <li><a href="books.html" aria-current="page">Books</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a class="btn-donate" href="donate.html">Donate</a></li>
+          </ul>
+        </nav>
+        <form class="search" role="search" action="books.html" method="get">
+          <label class="sr-only" for="site-search">Search for a book</label>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="site-search" type="search" name="q" placeholder="Search for a book">
+        </form>
+      </div>
+
+      <a class="account" href="login_and_signup_page.html" aria-label="My account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg></a>
+      <label class="nav-toggle" for="nav-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="sr-only">Menu</span></label>
+    </div>
+  </header>
+
+  <!-- books-page is needed for the css filters -->
+  <main id="main" class="section container books-page">
+    <section aria-labelledby="featured-heading">
+      <div class="books-head">
+        <h1 id="featured-heading">Featured Books</h1>
+        <div class="filter" role="radiogroup" aria-label="Filter by status">
+          <span class="filter__label">Status:</span>
+          <input class="filter-input" type="radio" name="status" id="s-all" checked><label class="pill" for="s-all">All</label>
+          <input class="filter-input" type="radio" name="status" id="s-available"><label class="pill" for="s-available">Available</label>
+          <input class="filter-input" type="radio" name="status" id="s-reserved"><label class="pill" for="s-reserved">Reserved</label>
+          <input class="filter-input" type="radio" name="status" id="s-borrowed"><label class="pill" for="s-borrowed">Borrowed</label>
+          
+        </div>
+      </div>
+
+      <div class="carousel carousel--books">
+        <div class="carousel__viewport">
+          <ul class="carousel__track">
+          <li class="carousel__item book-item" id="book-1" data-status="available" data-cat="">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/sons-of-the-sword.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of Sons of the Sword (Featured Story)" data-label="BOOK COVER&#10;assets/images/books/sons-of-the-sword.png"><span class="img-slot__img" style="background-image:url('assets/images/books/sons-of-the-sword.png')"></span></div>
+              <span class="book-card__title">Sons of the Sword (Featured Story)</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-2" data-status="available" data-cat="arts">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/in-the-town.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of In the Town: A Book of London Verses" data-label="BOOK COVER&#10;assets/images/books/in-the-town.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/in-the-town.png')"></span></div>
+              <span class="book-card__title">In the Town: A Book of London Verses</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-3" data-status="available" data-cat="education">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/history-of-the-american-people.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of A History of the American People" data-label="BOOK COVER&#10;assets/images/books/history-of-the-american-people.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/history-of-the-american-people.png')"></span></div>
+              <span class="book-card__title">A History of the American People</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-4" data-status="available" data-cat="education">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/surveying-voyages-adventure-beagle.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of Narrative of the Surveying Voyages of His Majesty's Ships Adventure and Beagle, Vol. 3" data-label="BOOK COVER&#10;assets/images/books/surveying-voyages-adventure-beagle.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/surveying-voyages-adventure-beagle.png')"></span></div>
+              <span class="book-card__title">Narrative of the Surveying Voyages of His Majesty's Ships Adventure and Beagle, Vol. 3</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-5" data-status="available" data-cat="arts">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/confessions-of-a-dancing-girl.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of The Confessions of a Dancing Girl" data-label="BOOK COVER&#10;assets/images/books/confessions-of-a-dancing-girl.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/confessions-of-a-dancing-girl.png')"></span></div>
+              <span class="book-card__title">The Confessions of a Dancing Girl</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-6" data-status="reserved" data-cat="arts">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/a-social-mirage.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of A Social Mirage" data-label="BOOK COVER&#10;assets/images/books/a-social-mirage.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/a-social-mirage.png')"></span></div>
+              <span class="book-card__title">A Social Mirage</span>
+              <span class="status status--reserved">Reserved</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-7" data-status="available" data-cat="education">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/voyage-du-bornou-au-baguirmi.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of Voyage du Bornou au Baguirmi" data-label="BOOK COVER&#10;assets/images/books/voyage-du-bornou-au-baguirmi.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/voyage-du-bornou-au-baguirmi.png')"></span></div>
+              <span class="book-card__title">Voyage du Bornou au Baguirmi</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-8" data-status="borrowed" data-cat="arts">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/poems.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of Poems" data-label="BOOK COVER&#10;assets/images/books/poems.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/poems.png')"></span></div>
+              <span class="book-card__title">Poems</span>
+              <span class="status status--borrowed">Borrowed</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-9" data-status="available" data-cat="arts">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/the-spring-chicken.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of The Spring Chicken at Mrs. Martin's" data-label="BOOK COVER&#10;assets/images/books/the-spring-chicken.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/the-spring-chicken.png')"></span></div>
+              <span class="book-card__title">The Spring Chicken at Mrs. Martin's</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-10" data-status="available" data-cat="education">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/modern-english-biography.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of Modern English Biography" data-label="BOOK COVER&#10;assets/images/books/modern-english-biography.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/modern-english-biography.png')"></span></div>
+              <span class="book-card__title">Modern English Biography</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-11" data-status="available" data-cat="health">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/natural-history-pliny.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of The Natural History of Pliny, Vol. 6" data-label="BOOK COVER&#10;assets/images/books/natural-history-pliny.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/natural-history-pliny.png')"></span></div>
+              <span class="book-card__title">The Natural History of Pliny, Vol. 6</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          <li class="carousel__item book-item" id="book-12" data-status="available" data-cat="religion">
+            <a class="book-card" href="book-detail.html">
+              <!-- put your image here: assets/images/books/city-of-god.jpg -->
+        <div class="img-slot " style="--ratio:2 / 3" role="img" aria-label="Cover of The City of God, Vol. 1" data-label="BOOK COVER&#10;assets/images/books/city-of-god.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/city-of-god.png')"></span></div>
+              <span class="book-card__title">The City of God, Vol. 1</span>
+              <span class="status status--available">Available</span>
+            </a>
+          </li>
+          </ul>
+        </div>
+        <!-- arrows and dots just link to a book -->
+        <div class="carousel__controls">
+          <a class="carousel__btn" href="#book-1" aria-label="Back to the first books"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a>
+          <div class="carousel__dots"><a class="carousel__dot carousel__dot--active" href="#book-1" aria-label="First page of books"></a><a class="carousel__dot" href="#book-7" aria-label="Next page of books"></a></div>
+          <a class="carousel__btn" href="#book-7" aria-label="Show more books"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories" aria-labelledby="categories-heading">
+      <h2 id="categories-heading">Categories</h2>
+      <input class="filter-input" type="radio" name="category" id="c-all" checked>
+      <label class="clear-category" for="c-all">Show all categories</label>
+      <div class="carousel carousel--categories">
+        <div class="carousel__viewport">
+          <ul class="carousel__track">
+          <li class="carousel__item">
+            <input class="filter-input" type="radio" name="category" id="c-arts">
+            <label class="category-card" for="c-arts">
+              <span class="category-card__name">Arts &amp; Culture</span>
+              <!-- put your image here: assets/images/books/in-the-town.jpg -->
+        <div class="img-slot " style="--ratio:3 / 4" role="img" aria-label="" data-label="BOOK COVER&#10;assets/images/books/in-the-town.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/in-the-town.png')"></span></div>
+            </label>
+          </li>
+          <li class="carousel__item">
+            <input class="filter-input" type="radio" name="category" id="c-education">
+            <label class="category-card" for="c-education">
+              <span class="category-card__name">Education &amp; Reference</span>
+              <!-- put your image here: assets/images/books/modern-english-biography.jpg -->
+        <div class="img-slot " style="--ratio:3 / 4" role="img" aria-label="" data-label="BOOK COVER&#10;assets/images/books/modern-english-biography.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/modern-english-biography.png')"></span></div>
+            </label>
+          </li>
+          <li class="carousel__item">
+            <input class="filter-input" type="radio" name="category" id="c-health">
+            <label class="category-card" for="c-health">
+              <span class="category-card__name">Health &amp; Medicine</span>
+              <!-- put your image here: assets/images/books/natural-history-pliny.jpg -->
+        <div class="img-slot " style="--ratio:3 / 4" role="img" aria-label="" data-label="BOOK COVER&#10;assets/images/books/natural-history-pliny.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/natural-history-pliny.png')"></span></div>
+            </label>
+          </li>
+          <li class="carousel__item">
+            <input class="filter-input" type="radio" name="category" id="c-religion">
+            <label class="category-card" for="c-religion">
+              <span class="category-card__name">Religion &amp; Philosophy</span>
+              <!-- put your image here: assets/images/books/city-of-god.jpg -->
+        <div class="img-slot " style="--ratio:3 / 4" role="img" aria-label="" data-label="BOOK COVER&#10;assets/images/books/city-of-god.jpg"><span class="img-slot__img" style="background-image:url('assets/images/books/city-of-god.png')"></span></div>
+            </label>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Write a new chapter.<br>Support our mission.</p>
+      <p class="site-footer__right">&copy; 2026 ReBook. All rights reserved<br>Web Development Project</p>
+    </div>
+  </footer>
+</body>
+</html>

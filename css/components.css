@@ -1,0 +1,78 @@
+/* parts used on many pages (buttons, carousel, form) */
+
+/* buttons */
+.btn {
+  display: inline-block; padding: .75rem 1.75rem; border-radius: var(--radius);
+  border: 2px solid var(--blue); background: var(--blue); color: var(--white);
+  font: inherit; font-weight: 600; text-align: center; text-decoration: none; cursor: pointer;
+  transition: background .15s;
+}
+.btn:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+.btn--outline { background: var(--white); color: var(--blue); }
+.btn--outline:hover { background: var(--reserved-bg); }
+.btn[disabled], .btn[aria-disabled="true"] { background: #b9bfd1; border-color: #b9bfd1; cursor: not-allowed; }
+
+/* status badges */
+.status { font-weight: 700; }
+.status--available { color: var(--green); }
+.status--reserved  { color: var(--reserved-ink); }
+.status--borrowed  { color: var(--borrowed-ink); }
+.pill-badge {
+  display: inline-block; padding: .15rem .75rem; border-radius: 999px; font-weight: 600; font-size: .95rem;
+}
+.pill-badge--reserved  { background: var(--reserved-bg); color: var(--reserved-ink); }
+.pill-badge--available { background: #def5e5; color: var(--green); }
+.pill-badge--borrowed  { background: var(--borrowed-bg); color: var(--borrowed-ink); }
+
+/* image placeholder - shows a dashed box until the image file is added */
+.img-slot {
+  position: relative; aspect-ratio: var(--ratio, 4 / 3); overflow: hidden; background: #e3e7f3;
+}
+.img-slot::before {
+  content: attr(data-label); position: absolute; inset: 6px; display: grid; place-content: center;
+  text-align: center; white-space: pre-line; word-break: break-word;
+  border: 2px dashed #8f9bcf; border-radius: 6px; padding: .5rem;
+  font-size: .8rem; line-height: 1.35; color: #38447a;
+}
+.img-slot__img { position: absolute; inset: 0; background-repeat: no-repeat; background-position: center; background-size: var(--fit, cover); }
+
+/* carousel */
+.carousel { background: var(--surface); border-radius: var(--radius); padding: 1.25rem 0 0; }
+.carousel__viewport { overflow: hidden; }
+.carousel__track {
+  list-style: none; margin: 0; padding: 0; display: flex;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin;
+}
+.carousel__item { flex: 0 0 calc(100% / var(--per-view, 2)); scroll-snap-align: start; padding: 0 .75rem; }
+
+.carousel--books      { --per-view: 2; }
+.carousel--categories { --per-view: 1; }
+@media (min-width: 600px) { .carousel--books { --per-view: 3; } .carousel--categories { --per-view: 2; } }
+@media (min-width: 900px) { .carousel--books { --per-view: 4; } .carousel--categories { --per-view: 3; } }
+@media (min-width: 1200px){ .carousel--books { --per-view: 6; } .carousel--categories { --per-view: 4; } }
+
+.carousel__controls { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1rem; background: var(--white); }
+.carousel__btn { display: block; padding: .4rem; color: var(--ink); }
+.carousel__btn svg { width: 24px; height: 24px; }
+.carousel__dots { display: flex; gap: .6rem; }
+.carousel__dot { display: block; width: 14px; height: 14px; border-radius: 50%; background: #d0d0d0; }
+.carousel__dot--active { background: var(--ink); }
+
+/* info table */
+.info-table { width: 100%; border-collapse: collapse; background: var(--surface); }
+.info-table th, .info-table td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--ink); vertical-align: top; }
+.info-table th { width: 30%; font-weight: 700; border-right: 1px solid var(--ink); }
+.info-table td { font-size: 1.15rem; }
+
+/* form fields */
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-weight: 600; margin-bottom: .25rem; }
+.field input, .field textarea {
+  width: 100%; padding: .7rem .9rem; font: inherit; border: 2px solid var(--ink); border-radius: 10px; background: var(--white);
+}
+.field textarea { resize: vertical; min-height: 5rem; }
+.field input:user-invalid { border-color: var(--danger); }
+.field__hint  { color: var(--muted); font-size: .85rem; margin: .2rem 0 0; }
+.field--check { display: flex; gap: .6rem; align-items: flex-start; font-size: .9rem; }
+.field--check input { width: 1.1rem; height: 1.1rem; margin-top: .2rem; accent-color: var(--blue); }
+

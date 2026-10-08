@@ -8,7 +8,7 @@
     <title>ReBook - Welcome</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="login_and_signup_style.css">
+    <link rel="stylesheet" href="css/login_and_signup_style.css">
 </head>
 
 <body>
@@ -19,28 +19,36 @@
 
         <header class="navbar">
 
-            <a href="#" class="brand">
+            <a href="Homepage.html" class="brand">
                 <img
                     class="brand-icon"
-                    src="asset/ReBook-Logo-nobg.png"
+                    src="assets/images/ReBook-Logo-nobg.png"
                     alt="ReBook logo"
                 >
                 ReBook
             </a>
 
+            <input class="mobile-nav-toggle-input" type="checkbox" id="mobile-nav-welcome" aria-label="Toggle navigation">
+            <label class="mobile-nav-toggle" for="mobile-nav-welcome" aria-label="Open navigation menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </label>
+
             <ul class="nav-links">
 
                 <li>
-                    <a href="#">Home</a>
+                    <a href="Homepage.html">Home</a>
                 </li>
 
                 <li class="dropdown">
-                    <a href="#">About Us</a>
+                    <a href="about.html">About Us</a>
                     <span class="caret">▾</span>
+                    <ul class="submenu">
+                        <li><a href="how-it-works.html">How it works</a></li>
+                    </ul>
                 </li>
 
                 <li>
-                    <a href="#">Books</a>
+                    <a href="books.html">Books</a>
                 </li>
 
                 <li>
@@ -136,7 +144,7 @@
 
                 <img
                     class="welcome-logo"
-                    src="asset/ReBook-Logo.png"
+                    src="assets/images/ReBook-Logo-nobg.png"
                     alt="ReBook logo"
                 >
 

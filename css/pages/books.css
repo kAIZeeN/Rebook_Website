@@ -1,0 +1,64 @@
+/* books page */
+.books-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.books-head h1, .books-head h2 { margin: 0; }
+
+/* status filter pills */
+.filter { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.filter__label { font-weight: 600; }
+.pill {
+  display: inline-block; background: var(--white); color: var(--blue); border: 2px solid var(--blue); border-radius: 999px;
+  padding: .4rem 1.1rem; font: inherit; font-weight: 600; cursor: pointer;
+}
+.pill:hover { background: var(--reserved-bg); }
+
+
+/* book card */
+.book-card { display: flex; flex-direction: column; align-items: center; gap: .4rem; text-decoration: none; color: var(--ink); text-align: center; }
+.book-card .img-slot { --ratio: 2 / 3; width: min(100%, 130px); }
+.book-card:hover .book-card__title { text-decoration: underline; }
+.book-card__title {
+  font-size: .85rem; font-weight: 600; line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.book-card .status { font-size: .95rem; padding-bottom: 1rem; }
+
+/* category card */
+.categories { margin-top: 3rem; }
+.category-card {
+  display: flex; width: 100%; background: none; border: 3px solid transparent; border-radius: var(--radius);
+  padding: .5rem; cursor: pointer; font: inherit; color: var(--ink);
+  display: flex; flex-direction: column; align-items: center; gap: .6rem; padding-bottom: 1.25rem;
+}
+.category-card:hover { background: rgba(255,255,255,.6); }
+
+.category-card__name { font-size: 1.2rem; font-weight: 800; text-align: center; }
+.category-card .img-slot { --ratio: 3 / 4; width: min(100%, 120px); }
+
+/* filters (the radio buttons are hidden, the labels work as buttons) */
+.filter-input { position: absolute; opacity: 0; pointer-events: none; }
+.clear-category { display: inline-block; margin: 0 0 1rem; color: var(--blue); font-weight: 600; text-decoration: underline; cursor: pointer; }
+
+/* active status pill */
+.books-page:has(#s-all:checked) label[for="s-all"],
+.books-page:has(#s-available:checked) label[for="s-available"],
+.books-page:has(#s-reserved:checked) label[for="s-reserved"],
+.books-page:has(#s-borrowed:checked) label[for="s-borrowed"] { background: var(--blue); color: var(--white); }
+
+/* active category card */
+.books-page:has(#c-arts:checked) label[for="c-arts"],
+.books-page:has(#c-education:checked) label[for="c-education"],
+.books-page:has(#c-health:checked) label[for="c-health"],
+.books-page:has(#c-religion:checked) label[for="c-religion"] { border-color: var(--blue); background: var(--white); }
+
+/* keyboard focus */
+.books-page:has(.filter-input:focus-visible) { --focus: 1; }
+.filter-input:focus-visible + .pill, .filter-input:focus-visible + .category-card { outline: 3px solid var(--cyan); outline-offset: 2px; }
+
+/* hide books that don't match */
+.books-page:has(#s-available:checked) .book-item:not([data-status="available"]),
+.books-page:has(#s-reserved:checked)  .book-item:not([data-status="reserved"]),
+.books-page:has(#s-borrowed:checked)  .book-item:not([data-status="borrowed"]),
+.books-page:has(#c-arts:checked)      .book-item:not([data-cat="arts"]),
+.books-page:has(#c-education:checked) .book-item:not([data-cat="education"]),
+.books-page:has(#c-health:checked)    .book-item:not([data-cat="health"]),
+.books-page:has(#c-religion:checked)  .book-item:not([data-cat="religion"]) { display: none; }
