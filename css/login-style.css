@@ -44,15 +44,193 @@ img {
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    background: var(--navy);
-    color: var(--white);
-    padding: 12px 40px;
-    min-height: 72px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #0C00AE;
+  color: #FFFFFF;
+  padding: 12px 40px;
+  min-height: 72px;
+  flex-wrap: wrap;
+}
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.navbar .brand-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.navbar .nav-links li {
+  white-space: nowrap;
+}
+
+.navbar .nav-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links .dropdown:hover {
+  opacity: 0.75;
+}
+
+.navbar .nav-links .dropdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.navbar .nav-links .caret {
+  font-size: 0.7rem;
+}
+
+.navbar .donate-btn {
+  background: #10BFFF;
+  color: #FFFFFF;
+  font: inherit;
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navbar .donate-btn:hover {
+  background: #08a9df;
+  transform: translateY(-1px);
+}
+
+.navbar .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar .search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 220px;
+  height: 36px;
+  padding: 7px 14px;
+  background: #FFFFFF;
+  border-radius: 24px;
+}
+
+.navbar .search-box input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  color: #2C2C2C;
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.navbar .search-box input::placeholder,
+.navbar .search-box svg {
+  color: #999999;
+}
+
+.navbar .search-box svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.navbar .profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.navbar .profile-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar .profile-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #FFFFFF;
+}
+
+/* About Us dropdown and homepage-matched footer behavior */
+.navbar .nav-links .dropdown {
+  position: relative;
+}
+
+.navbar .nav-links .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 30;
+  display: none;
+  min-width: 11rem;
+  padding: 8px 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  list-style: none;
+  background: #0C00AE;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-links .dropdown:hover > .submenu,
+.navbar .nav-links .dropdown:focus-within > .submenu {
+  display: flex;
+}
+
+.navbar .nav-links .submenu li {
+  width: 100%;
+}
+
+.navbar .nav-links .submenu a {
+  display: block;
+  padding: 8px 14px;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.navbar .nav-links .submenu a:hover,
+.navbar .nav-links .submenu a:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 1;
 }
 
 .navbar .mobile-nav-toggle-input,
@@ -60,277 +238,33 @@ img {
     display: none;
 }
 
-.navbar .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.5rem;
-    font-weight: 800;
-    white-space: nowrap;
-}
-
-.brand-icon {
-    width: 45px;
-    height: 45px;
-    flex-shrink: 0;
-    object-fit: contain;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    list-style: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-}
-
-.nav-links li {
-    white-space: nowrap;
-}
-
-.nav-links a {
-    transition: opacity 0.2s ease;
-}
-
-.nav-links a:hover {
-    opacity: 0.75;
-}
-
-.nav-links .dropdown {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
-}
-
-.nav-links .caret {
-    font-size: 0.7rem;
-}
-
-.donate-btn {
-    background: var(--sky-cyan);
-    color: var(--white);
-    font-family: inherit;
-    font-weight: 700;
-    padding: 8px 16px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.donate-btn:hover {
-    background: #08a9df;
-    transform: translateY(-1px);
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--white);
-    border-radius: 24px;
-    padding: 7px 14px;
-    width: 220px;
-    height: 36px;
-}
-
-.search-box input {
-    border: none;
-    outline: none;
-    flex: 1;
-    font-size: 0.75rem;
-    color: var(--charcoal);
-    min-width: 0;
-}
-
-.search-box input::placeholder {
-    color: #999;
-}
-
-.search-box svg {
-    width: 17px;
-    height: 17px;
-    color: #999;
-    flex-shrink: 0;
-}
-
-.profile-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 2px solid var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.2s ease;
-}
-
-.profile-icon:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.profile-icon svg {
-    width: 18px;
-    height: 18px;
-    color: var(--white);
-}
+/* ================= FOOTER ================= */
 
 .site-footer {
-    width: 100%;
-    min-height: 70px;
-    background: var(--navy);
-    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 14px 40px;
+    width: 100%;
+    min-height: 59px;
+    padding: 10px 20px;
     flex-shrink: 0;
+    background: #0c00ae;
+    color: white;
 }
 
-.site-footer .footer-left,
-.site-footer .footer-right {
+.footer-left,
+.footer-right {
+    font-size: 11px;
     font-weight: 700;
-    line-height: 1.4;
-    font-size: 0.75rem;
+    line-height: 1.25;
 }
 
-.site-footer .footer-left {
+.footer-left {
     text-align: left;
 }
 
-.site-footer .footer-right {
-    text-align: right;
-}
-
-/* =========================================================
-   ABOUT US DROPDOWN
-========================================================= */
-
-.nav-links .dropdown {
-    position: relative;
-}
-
-
-/* Dropdown menu */
-
-.nav-links .submenu {
-    position: absolute;
-
-    top: 100%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 175px;
-
-    margin-top: 6px;
-    padding: 0;
-
-    list-style: none;
-
-    /* Purple dropdown like the screenshot */
-    background: #4F47B5;
-
-    border-radius: 0 0 7px 7px;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition:
-        opacity 0.2s ease,
-        visibility 0.2s ease;
-
-    z-index: 1000;
-}
-
-
-/* Dropdown item */
-
-.nav-links .submenu li {
-    width: 100%;
-}
-
-
-/* Dropdown link */
-
-.nav-links .submenu li a {
-    display: block;
-
-    width: 100%;
-
-    padding: 14px 15px;
-
-    color: #FFFFFF;
-
-    background: transparent;
-
-    font-size: 0.85rem;
-    font-weight: 700;
-
-    white-space: nowrap;
-
-    opacity: 1;
-
-    transition: background 0.2s ease;
-}
-
-
-/* Dropdown link hover */
-
-.nav-links .submenu li a:hover {
-    background: #3F38A0;
-
-    color: #FFFFFF;
-
-    opacity: 1;
-}
-
-
-/* Show dropdown when hovering About Us */
-
-.nav-links .dropdown:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.site-footer {
-    width: 100%;
-    min-height: 70px;
-    background: var(--navy);
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 14px 40px;
-    flex-shrink: 0;
-}
-
-.site-footer .footer-left,
-.site-footer .footer-right {
-    font-weight: 700;
-    line-height: 1.4;
-    font-size: 0.75rem;
-}
-
-.site-footer .footer-left {
-    text-align: left;
-}
-
-.site-footer .footer-right {
+.footer-right {
     text-align: right;
 }
 
