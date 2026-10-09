@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --navy: #0c00ae;
+  --blue: #1d56e8;
+  --red: #ef3329;
+  --ink: #161616;
+  --muted: #5b5b5b;
+  --line: #c9c9c9;
+  --shadow: 0 2px 9px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+button,
+a,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #55c6ff;
+  outline-offset: 2px;
+}
+
+.admin-header {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px 16px;
+  color: #ffffff;
+  background: var(--navy);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  display: block;
+  width: 54px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 24px);
+  margin-left: auto;
+}
+
+.admin-nav > a,
+.nav-dropdown summary {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 13px;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.admin-nav > a {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.admin-nav > a:hover,
+.admin-nav > a:focus-visible {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.admin-nav > a.active {
+  font-weight: 700;
+}
+
+.nav-dropdown summary.active {
+  font-weight: 700;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown summary::after {
+  content: "⌄";
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 15px;
+  transition: transform 0.18s ease;
+}
+
+.nav-dropdown[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 15px);
+  left: 50%;
+  min-width: 140px;
+  padding: 5px;
+  border-radius: 4px;
+  background: var(--navy);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+}
+
+.nav-dropdown__menu a {
+  display: block;
+  padding: 8px;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-dropdown__menu a:hover,
+.nav-dropdown__menu a:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.logout-button {
+  flex: none;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--red);
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.logout-button:hover {
+  background: #d82720;
+  transform: translateY(-1px);
+}
+
+.books-main {
+  padding: 18px 10px 26px;
+}
+
+.books-main h1 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.inventory-count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.table-scroll {
+  margin-top: 16px;
+  overflow-x: auto;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.admin-books__table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 11px;
+}
+
+.admin-books__table th,
+.admin-books__table td {
+  padding: 7px 8px;
+  border-right: 1px solid #bcbcbc;
+  border-bottom: 1px solid #bcbcbc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-books__table th:last-child,
+.admin-books__table td:last-child {
+  border-right: 0;
+}
+
+.admin-books__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-books__table th {
+  height: 36px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.admin-books__table th:nth-child(1) { width: 25%; }
+.admin-books__table th:nth-child(2) { width: 27%; }
+.admin-books__table th:nth-child(3) { width: 17%; }
+.admin-books__table th:nth-child(4) { width: 16%; }
+.admin-books__table th:nth-child(5) { width: 15%; }
+
+.admin-books__table td {
+  height: 48px;
+  font-size: 10px;
+}
+
+.book-title-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left !important;
+  line-height: 1.3;
+}
+
+.book-cover {
+  flex: none;
+  width: 20px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.category-tag {
+  display: inline-block;
+  min-width: 52px;
+  margin: 2px 3px;
+  padding: 4px 8px;
+  background: var(--navy);
+  color: #ffffff;
+  font-size: 9px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2.4vw, 28px);
+}
+
+.approve-action,
+.reject-action {
+  display: inline-grid;
+  width: 13px;
+  height: 13px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.approve-action {
+  color: #00a43c;
+}
+
+.reject-action {
+  color: #ed2f2f;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .admin-header {
+    min-height: 68px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 8px 12px;
+  }
+
+  .brand {
+    gap: 7px;
+    font-size: clamp(15px, 3vw, 22px);
+  }
+
+  .brand-mark {
+    width: 44px;
+    height: 42px;
+  }
+
+  .admin-nav {
+    justify-content: space-between;
+    gap: clamp(6px, 1.3vw, 12px);
+    margin-left: 0;
+  }
+
+  .admin-nav > a,
+  .nav-dropdown summary {
+    font-size: 11px;
+  }
+
+  .logout-button {
+    padding: 4px 7px;
+    font-size: 11px;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .admin-header {
+    flex-wrap: wrap;
+  }
+
+  .admin-nav {
+    order: 3;
+    width: 100%;
+  }
+}

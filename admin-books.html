@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Books | ReBook</title>
+    <link rel="stylesheet" href="css/admin-books-style.css">
+    <link rel="stylesheet" href="css/admin-header.css">
+  </head>
+  <body>
+    <header class="admin-header">
+      <a class="brand" href="admin-dashboard.html" aria-label="ReBook Admin dashboard">
+        <img class="brand-mark" src="assets/images/ReBook-Logo-nobg.png" alt="">
+        <span>ReBook Admin</span>
+      </a>
+
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-users.html">Users</a>
+        <div class="admin-nav__books">
+          <a href="admin-books.html" class="active" aria-current="page">Books</a>
+          <details class="nav-dropdown">
+            <summary aria-label="More book options"></summary>
+            <div class="nav-dropdown__menu">
+              <a href="#">Borrow Request</a>
+            </div>
+          </details>
+        </div>
+        <a href="#">Donations</a>
+      </nav>
+
+      <a href="admin-login.html" class="logout-button">Log Out</a>
+    </header>
+
+    <main class="books-main">
+      <h1>Books</h1>
+      <p class="inventory-count">13 books in inventory</p>
+
+      <div class="table-scroll">
+        <table class="admin-books__table">
+          <caption class="visually-hidden">Book inventory with category, author, condition, and review actions</caption>
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Category</th>
+              <th scope="col">Author</th>
+              <th scope="col">Condition</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/sons-of-the-sword.png" alt=""><span>Sons of the Sword (Featured Story)</span></td>
+              <td><span class="category-tag">Sci-fi</span><span class="category-tag">Fantasy</span></td>
+              <td>George Surdez</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for Sons of the Sword"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/history-of-the-american-people.png" alt=""><span>A History of the American People</span></td>
+              <td><span class="category-tag">History</span></td>
+              <td>Woodrow Wilson</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for A History of the American People"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/city-of-god.png" alt=""><span>The City of God, Vol. 1</span></td>
+              <td><span class="category-tag">History</span><span class="category-tag">Religion</span></td>
+              <td>Saint Augustine</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for The City of God"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/image 14.png" alt=""><span>The Sea Fairies</span></td>
+              <td><span class="category-tag">Fantasy</span></td>
+              <td>Lyman Frank Baum</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for The Sea Fairies"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/in-the-town.png" alt=""><span>In the Town: A Book of London Verses</span></td>
+              <td><span class="category-tag">Arts</span></td>
+              <td>—</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for In the Town"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/surveying-voyages-adventure-beagle.png" alt=""><span>Narrative of the Surveying Voyages of His Majesty's Ships Adventure and Beagle, Vol. 3</span></td>
+              <td><span class="category-tag">History</span><span class="category-tag">Travel</span></td>
+              <td>Robert FitzRoy</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for Narrative of the Surveying Voyages"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/confessions-of-a-dancing-girl.png" alt=""><span>The Confessions of a Dancing Girl</span></td>
+              <td><span class="category-tag">Arts</span></td>
+              <td>—</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for The Confessions of a Dancing Girl"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/a-social-mirage.png" alt=""><span>A Social Mirage</span></td>
+              <td><span class="category-tag">Arts</span></td>
+              <td>—</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for A Social Mirage"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/voyage-du-bornou-au-baguirmi.png" alt=""><span>Voyage du Bornou au Baguirmi</span></td>
+              <td><span class="category-tag">History</span><span class="category-tag">Travel</span></td>
+              <td>Heinrich Barth</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for Voyage du Bornou au Baguirmi"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/poems.png" alt=""><span>Poems</span></td>
+              <td><span class="category-tag">Arts</span></td>
+              <td>—</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for Poems"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/the-spring-chicken.png" alt=""><span>The Spring Chicken at Mrs. Martin's</span></td>
+              <td><span class="category-tag">Arts</span></td>
+              <td>—</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for The Spring Chicken"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/modern-english-biography.png" alt=""><span>Modern English Biography</span></td>
+              <td><span class="category-tag">Biography</span></td>
+              <td>Frederic Boase</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for Modern English Biography"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr data-book-row>
+              <td class="book-title-cell"><img class="book-cover" src="assets/images/books/natural-history-pliny.png" alt=""><span>The Natural History of Pliny, Vol. 6</span></td>
+              <td><span class="category-tag">History</span><span class="category-tag">Science</span></td>
+              <td>Pliny the Elder</td>
+              <td>Good</td>
+              <td><div class="row-actions" aria-label="Actions for The Natural History of Pliny"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </body>
+</html>

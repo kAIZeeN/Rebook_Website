@@ -5,33 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ReBook Admin Dashboard</title>
     <link rel="stylesheet" href="css/admin-dashboard-style.css" />
+    <link rel="stylesheet" href="css/admin-header.css" />
   </head>
   <body>
     <header class="admin-header">
-      <div class="brand" aria-label="ReBook Admin brand">
+      <a class="brand" href="admin-dashboard.html" aria-label="ReBook Admin dashboard">
         <img
           class="brand-mark"
           src="assets/images/ReBook-Logo-nobg.png"
           alt="ReBook logo"
         />
         <span>ReBook Admin</span>
-      </div>
+      </a>
 
       <nav class="admin-nav" aria-label="Admin navigation">
-        <a href="#" class="active">Dashboard</a>
-        <a href="#">Users</a>
-        <details class="nav-dropdown">
-          <summary>Books</summary>
-          <div class="nav-dropdown__menu">
-            <a href="#">Borrow Request</a>
-          </div>
-        </details>
+        <a href="admin-dashboard.html" class="active" aria-current="page">Dashboard</a>
+        <a href="admin-users.html">Users</a>
+        <div class="admin-nav__books">
+          <a href="admin-books.html">Books</a>
+          <details class="nav-dropdown">
+            <summary aria-label="More book options"></summary>
+            <div class="nav-dropdown__menu">
+              <a href="#">Borrow Request</a>
+            </div>
+          </details>
+        </div>
         <a href="#">Donations</a>
       </nav>
 
-      <a href="admin-login.html" class="logout-link">
-        <button class="logout-button" type="button">Log Out</button>
-      </a>
+      <a href="admin-login.html" class="logout-button">Log Out</a>
     </header>
 
     <main class="admin-main">
