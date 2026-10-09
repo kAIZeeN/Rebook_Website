@@ -1,0 +1,185 @@
+ .borrow-main {
+  padding: 20px 14px 26px;
+}
+
+.borrow-main h1 {
+  margin: 0 0 26px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.borrow-main .book-search {
+  display: block;
+  width: 186px;
+  height: 20px;
+  padding: 2px 5px;
+  border: 1px solid #222222;
+  border-radius: 5px;
+  color: #161616;
+  font: inherit;
+  font-size: 12px;
+}
+
+.borrow-main .table-scroll {
+  margin-top: 52px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.admin-borrow__table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 10px;
+}
+
+.admin-borrow__table th,
+.admin-borrow__table td {
+  padding: 6px 8px;
+  border-right: 1px solid #bcbcbc;
+  border-bottom: 1px solid #bcbcbc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-borrow__table th:last-child,
+.admin-borrow__table td:last-child {
+  border-right: 0;
+}
+
+.admin-borrow__table thead th {
+  height: 32px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.admin-borrow__table th:nth-child(1) { width: 25%; }
+.admin-borrow__table th:nth-child(2) { width: 26%; }
+.admin-borrow__table th:nth-child(3) { width: 18%; }
+.admin-borrow__table th:nth-child(4) { width: 16%; }
+.admin-borrow__table th:nth-child(5) { width: 15%; }
+
+.admin-borrow__table tbody td {
+  height: 52px;
+  font-size: 9px;
+}
+
+.admin-borrow__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-borrow__table .book-title-cell {
+  min-height: 52px;
+  gap: 8px;
+  overflow: hidden;
+  font-size: 9px;
+  line-height: 1.25;
+  text-align: left !important;
+}
+
+.admin-borrow__table .book-cover {
+  width: 22px;
+  height: 32px;
+}
+
+.borrower-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-align: left;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.borrower-icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #222222;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
+.standing-badge {
+  display: inline-block;
+  min-width: 58px;
+  padding: 5px 7px;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 9px;
+  line-height: 1;
+}
+
+.standing-badge--active {
+  background: #2fc45a;
+}
+
+.standing-badge--overdue {
+  background: #f0161b;
+}
+
+.admin-borrow__table .row-actions {
+  gap: 20px;
+}
+
+.admin-borrow__table .approve-action,
+.admin-borrow__table .reject-action {
+  width: 12px;
+  height: 12px;
+  font-size: 9px;
+}
+
+.admin-borrow__table .reject-action {
+  font-size: 11px;
+}
+
+.borrow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 26px 0;
+  font-size: 10px;
+}
+
+.borrow-page-size {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.borrow-page-size select {
+  padding: 0;
+  border: 1px solid #777777;
+  border-radius: 2px;
+  background: #ffffff;
+  font-size: 10px;
+}
+
+.borrow-pagination {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .borrow-main {
+    padding-inline: 10px;
+  }
+
+  .borrow-main .table-scroll {
+    margin-top: 36px;
+  }
+
+  .borrow-controls {
+    padding-inline: 4px;
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Borrow Requests | ReBook</title>
+    <link rel="stylesheet" href="css/admin-books-style.css">
+    <link rel="stylesheet" href="css/admin-borrow-style.css">
+    <link rel="stylesheet" href="css/admin-header.css">
+  </head>
+  <body>
+    <header class="admin-header">
+      <a class="brand" href="admin-dashboard.html" aria-label="ReBook Admin dashboard">
+        <img class="brand-mark" src="assets/images/ReBook-Logo-nobg.png" alt="">
+        <span>ReBook Admin</span>
+      </a>
+
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-users.html">Users</a>
+        <div class="admin-nav__books">
+          <a href="admin-books.html">Books</a>
+          <details class="nav-dropdown">
+            <summary aria-label="More book options"></summary>
+            <div class="nav-dropdown__menu">
+              <a href="admin-borrow.html" aria-current="page">Borrow Request</a>
+            </div>
+          </details>
+        </div>
+        <a href="#">Donations</a>
+      </nav>
+
+      <a href="admin-login.html" class="logout-button">Log Out</a>
+    </header>
+
+    <main class="borrow-main">
+      <h1>Books</h1>
+      <label class="visually-hidden" for="borrow-search">Search borrow requests by book title</label>
+      <input id="borrow-search" class="book-search" type="search" placeholder="Books" autocomplete="off">
+
+      <div class="table-scroll">
+        <table class="admin-borrow__table">
+          <caption class="visually-hidden">Book borrow requests, borrower standing, request date, and review actions</caption>
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Request Details</th>
+              <th scope="col">User Standing</th>
+              <th scope="col">Request Date</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="book-title-cell">
+                <img class="book-cover" src="assets/images/books/sons-of-the-sword.png" alt="">
+                <span>Sons of the Sword (Featured Story)</span>
+              </td>
+              <td>
+                <div class="borrower-details">
+                  <svg class="borrower-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3.5"></circle><path d="M5 20v-2a7 7 0 0 1 14 0v2z"></path></svg>
+                  <span>Example_123<br>Juan Dela Cruz</span>
+                </div>
+              </td>
+              <td><span class="standing-badge standing-badge--active">Active</span></td>
+              <td>2026-08-12</td>
+              <td><div class="row-actions" aria-label="Actions for Sons of the Sword request"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr>
+              <td class="book-title-cell">
+                <img class="book-cover" src="assets/images/books/history-of-the-american-people.png" alt="">
+                <span>The Cambridge History of India, Volume VI: The Indian Empire and After (1858–1919)</span>
+              </td>
+              <td>
+                <div class="borrower-details">
+                  <svg class="borrower-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3.5"></circle><path d="M5 20v-2a7 7 0 0 1 14 0v2z"></path></svg>
+                  <span>Example_123<br>Juan Dela Cruz</span>
+                </div>
+              </td>
+              <td><span class="standing-badge standing-badge--active">Active</span></td>
+              <td>2026-08-12</td>
+              <td><div class="row-actions" aria-label="Actions for The Cambridge History of India request"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr>
+              <td class="book-title-cell">
+                <img class="book-cover" src="assets/images/books/city-of-god.png" alt="">
+                <span>The City of God, Volume One</span>
+              </td>
+              <td>
+                <div class="borrower-details">
+                  <svg class="borrower-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3.5"></circle><path d="M5 20v-2a7 7 0 0 1 14 0v2z"></path></svg>
+                  <span>Example_123<br>Juan Dela Cruz</span>
+                </div>
+              </td>
+              <td><span class="standing-badge standing-badge--overdue">Overdue</span></td>
+              <td>2026-08-12</td>
+              <td><div class="row-actions" aria-label="Actions for The City of God request"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+            <tr>
+              <td class="book-title-cell">
+                <img class="book-cover" src="assets/images/books/image 14.png" alt="">
+                <span>The Sea Fairies</span>
+              </td>
+              <td>
+                <div class="borrower-details">
+                  <svg class="borrower-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3.5"></circle><path d="M5 20v-2a7 7 0 0 1 14 0v2z"></path></svg>
+                  <span>Example_123<br>Juan Dela Cruz</span>
+                </div>
+              </td>
+              <td><span class="standing-badge standing-badge--active">Active</span></td>
+              <td>2026-08-12</td>
+              <td><div class="row-actions" aria-label="Actions for The Sea Fairies request"><span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="borrow-controls">
+        <label class="borrow-page-size" for="borrow-page-size">View
+          <select id="borrow-page-size" aria-label="Requests per page">
+            <option value="4" selected>4</option>
+          </select>
+          items per page
+        </label>
+        <nav class="borrow-pagination" aria-label="Borrow request pagination">
+          <span aria-hidden="true">&laquo;</span>
+          <span aria-hidden="true">&lsaquo;</span>
+          <span>Page 2 of 167</span>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span aria-hidden="true">&raquo;</span>
+        </nav>
+      </div>
+    </main>
+  </body>
+</html>

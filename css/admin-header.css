@@ -185,6 +185,51 @@
 
 @media (max-width: 900px) {
   .admin-header {
+    min-height: 68px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 8px 14px;
+  }
+
+  .admin-header .brand {
+    flex: none;
+    gap: 7px;
+    width: auto;
+    margin: 0;
+    justify-content: flex-start;
+    font-size: clamp(1rem, 2.4vw, 1.5rem);
+  }
+
+  .admin-header .brand-mark {
+    width: 44px;
+    height: 42px;
+  }
+
+  .admin-header .admin-nav {
+    flex: 1;
+    flex-wrap: nowrap;
+    gap: clamp(8px, 1.6vw, 16px);
+    justify-content: space-around;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .admin-header .admin-nav > a,
+  .admin-header .admin-nav__books > a,
+  .admin-header .nav-dropdown summary {
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+  }
+
+  .admin-header .logout-button {
+    flex: none;
+    padding: 6px 10px;
+    margin: 0;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
@@ -196,9 +241,6 @@
 
   .admin-header .brand {
     grid-area: brand;
-    width: auto;
-    margin: 0;
-    justify-content: flex-start;
   }
 
   .admin-header .admin-nav {
@@ -206,14 +248,17 @@
     width: 100%;
     flex: none;
     flex-wrap: wrap;
-    gap: 1rem 1.5rem;
     justify-content: center;
-    overflow: visible;
-    padding: 0;
+    gap: 1rem 1.5rem;
+  }
+
+  .admin-header .admin-nav > a,
+  .admin-header .admin-nav__books > a,
+  .admin-header .nav-dropdown summary {
+    font-size: 0.875rem;
   }
 
   .admin-header .logout-button {
     grid-area: logout;
-    margin: 0;
   }
 }
