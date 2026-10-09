@@ -1,0 +1,574 @@
+/* Shared base, header, navigation, and footer styles for this page */
+:root {
+    --navy: #0C00AE;
+    --royal-blue: #1653E1;
+    --sky-cyan: #10BFFF;
+    --violet: #4F47B5;
+    --charcoal: #2C2C2C;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --border-gray: #CFCFCF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--charcoal);
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #0C00AE;
+  color: #FFFFFF;
+  padding: 12px 40px;
+  min-height: 72px;
+  flex-wrap: wrap;
+}
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.navbar .brand-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.navbar .nav-links li {
+  white-space: nowrap;
+}
+
+.navbar .nav-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links .dropdown:hover {
+  opacity: 0.75;
+}
+
+.navbar .nav-links .dropdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.navbar .nav-links .caret {
+  font-size: 0.7rem;
+}
+
+.navbar .donate-btn {
+  background: #10BFFF;
+  color: #FFFFFF;
+  font: inherit;
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navbar .donate-btn:hover {
+  background: #08a9df;
+  transform: translateY(-1px);
+}
+
+.navbar .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar .search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 220px;
+  height: 36px;
+  padding: 7px 14px;
+  background: #FFFFFF;
+  border-radius: 24px;
+}
+
+.navbar .search-box input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  color: #2C2C2C;
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.navbar .search-box input::placeholder,
+.navbar .search-box svg {
+  color: #999999;
+}
+
+.navbar .search-box svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.navbar .profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.navbar .profile-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar .profile-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #FFFFFF;
+}
+
+/* About Us dropdown and homepage-matched footer behavior */
+.navbar .nav-links .dropdown {
+  position: relative;
+}
+
+.navbar .nav-links .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 30;
+  display: none;
+  min-width: 11rem;
+  padding: 8px 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  list-style: none;
+  background: #0C00AE;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-links .dropdown:hover > .submenu,
+.navbar .nav-links .dropdown:focus-within > .submenu {
+  display: flex;
+}
+
+.navbar .nav-links .submenu li {
+  width: 100%;
+}
+
+.navbar .nav-links .submenu a {
+  display: block;
+  padding: 8px 14px;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.navbar .nav-links .submenu a:hover,
+.navbar .nav-links .submenu a:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 1;
+}
+
+.navbar .mobile-nav-toggle-input,
+.navbar .mobile-nav-toggle {
+    display: none;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    min-height: 59px;
+    padding: 10px 20px;
+    flex-shrink: 0;
+    background: #0c00ae;
+    color: white;
+}
+
+.footer-left,
+.footer-right {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+/* =========================================================
+   WELCOME / LOGIN SECTION
+========================================================= */
+
+.welcome-section {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background: var(--white);
+
+    padding: 40px 20px 50px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   WELCOME CONTENT
+========================================================= */
+
+.welcome-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   MAIN LOGO
+========================================================= */
+
+.welcome-logo {
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   WELCOME TITLE
+========================================================= */
+
+.welcome-content h1 {
+    font-size: 2.4rem;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    color: #050505;
+
+    margin-bottom: 25px;
+}
+
+
+/* ReBook */
+
+.welcome-content h1 span {
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+.login_form {
+    width: 100%;
+    max-width: 340px;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+}
+
+
+.login_form form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.input-group label {
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    color: var(--charcoal);
+}
+
+
+.input-group input {
+    width: 100%;
+
+    height: 42px;
+
+    border: 1.5px solid var(--border-gray);
+
+    border-radius: 8px;
+
+    padding: 10px 12px;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    background: var(--white);
+
+    color: var(--charcoal);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.input-group input:focus {
+    outline: none;
+
+    border-color: var(--royal-blue);
+
+    box-shadow: 0 0 0 3px rgba(22, 83, 225, 0.12);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login_form button {
+    width: 100%;
+
+    height: 44px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: var(--navy);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.login_form button:hover {
+    background: var(--royal-blue);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SIGN UP LINK
+========================================================= */
+
+.signup-link {
+    font-size: 0.9rem;
+
+    color: var(--charcoal);
+
+    text-align: center;
+
+    margin-top: 2px;
+}
+
+
+.signup-link a {
+    color: var(--navy);
+
+    font-weight: 700;
+}
+
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .welcome-section {
+        padding: 40px 20px 50px;
+    }
+
+    .welcome-logo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .welcome-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .login_form {
+        max-width: 340px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .welcome-section {
+        padding: 30px 20px 40px;
+    }
+
+    .welcome-logo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .welcome-content h1 {
+        font-size: 1.8rem;
+
+        margin-bottom: 20px;
+    }
+
+    .login_form {
+        max-width: 320px;
+    }
+
+    .login_form form {
+        gap: 14px;
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+    }
+
+    .input-group input {
+        height: 40px;
+    }
+
+    .login_form button {
+        height: 42px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .welcome-logo {
+        width: 125px;
+        height: 125px;
+    }
+
+    .welcome-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .login_form {
+        max-width: 290px;
+    }
+}
