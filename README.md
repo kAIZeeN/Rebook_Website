@@ -37,12 +37,10 @@ Recommended:
 1. Open `index.html` or `Homepage.html` in your browser.
 2. Use the navigation links to explore the pages.
 
-## Technologies Used
+## Program Languages Used
 
 - HTML
 - CSS
-- JavaScript
-- Static web pages
 
 ## Notes
 
