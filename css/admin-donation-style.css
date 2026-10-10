@@ -1,0 +1,124 @@
+:root {
+  --donation-page-bg: #f3f4f6;
+  --donation-card-border: #d8dce3;
+  --donation-text: #121212;
+  --donation-muted: #4b5563;
+  --donation-accent: #0788ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--donation-page-bg);
+  color: var(--donation-text);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.donation-main {
+  width: min(100% - 2rem, 1100px);
+  margin: 2rem auto;
+}
+
+.donation-main > h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.donation-stats {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  overflow: hidden;
+  border: 3px solid var(--donation-accent);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.donation-stat {
+  grid-column: span 2;
+  min-width: 0;
+  padding: 1.35rem 1.5rem;
+  border-right: 1px solid var(--donation-card-border);
+  border-bottom: 1px solid var(--donation-card-border);
+}
+
+.donation-stat:nth-child(3),
+.donation-stat:nth-child(5) {
+  border-right: 0;
+}
+
+.donation-stat:nth-child(n + 4) {
+  grid-column: span 3;
+  border-bottom: 0;
+}
+
+.donation-stat h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.donation-stat__value {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .donation-main {
+    margin-block: 1.25rem;
+  }
+
+  .donation-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .donation-stat,
+  .donation-stat:nth-child(n + 4) {
+    grid-column: span 1;
+    border-right: 1px solid var(--donation-card-border);
+    border-bottom: 1px solid var(--donation-card-border);
+    padding: 1rem;
+  }
+
+  .donation-stat:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .donation-stat:last-child {
+    grid-column: 1 / -1;
+    border-bottom: 0;
+  }
+}
+
+.donation-chart {
+    display: inline-block;
+    width: 48%;
+    height: 200px;
+    object-fit: contain;
+    vertical-align: top;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0 1% 0 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.donation-chart:nth-of-type(2) {
+    margin-right: 0;
+}
+
+@media (max-width: 640px) {
+    .donation-chart {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 0 16px;
+    }
+}

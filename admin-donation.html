@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donations | ReBook Admin</title>
+  <link rel="stylesheet" href="css/admin-header.css">
+  <link rel="stylesheet" href="css/admin-donation-style.css">
+</head>
+<body>
+  <header class="admin-header">
+    <a class="brand" href="admin-dashboard.html" aria-label="ReBook Admin dashboard">
+      <img class="brand-mark" src="assets\images\ReBook-Logo-nobg.png" alt="">
+      <span>ReBook Admin</span>
+    </a>
+
+    <nav class="admin-nav" aria-label="Admin navigation">
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="admin-users.html">Users</a>
+      <div class="admin-nav__books">
+        <a href="admin-books.html">Books</a>
+        <details class="nav-dropdown">
+          <summary aria-label="More book options"></summary>
+          <div class="nav-dropdown__menu">
+            <a href="admin-borrow.html">Borrow Request</a>
+          </div>
+        </details>
+      </div>
+      <a href="admin-donation.html" class="active" aria-current="page">Donations</a>
+    </nav>
+
+    <a href="admin-login.html" class="logout-button">Log Out</a>
+  </header>
+
+  <main class="donation-main">
+    <h1>Donations</h1>
+    <section class="donation-stats" aria-label="Donation statistics">
+      <article class="donation-stat donation-stat--money">
+        <h2>Money Donations</h2>
+        <p class="donation-stat__value">₱10,500</p>
+      </article>
+      <article class="donation-stat">
+        <h2>Book Donations</h2>
+        <p class="donation-stat__value">1,000</p>
+      </article>
+      <article class="donation-stat">
+        <h2>Donors</h2>
+        <p class="donation-stat__value">800</p>
+      </article>
+      <article class="donation-stat">
+        <h2>Monthly Donors</h2>
+        <p class="donation-stat__value">15%</p>
+      </article>
+      <article class="donation-stat">
+        <h2>Average Donation</h2>
+        <p class="donation-stat__value">₱1,500</p>
+      </article>
+    </section>
+
+    <h2>Giving Numbers</h2>
+    <img class="donation-chart" src="assets\images\donation-chart-1.png" alt="Chart showing donation trends over time">
+    <img class="donation-chart" src="assets\images\donation-chart-2.png" alt="Chart showing donation trends over time">
+  </main>
+</body>
+</html>
