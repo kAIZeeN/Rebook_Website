@@ -936,6 +936,52 @@ display: flex;
     object-fit: contain;
 }
 
+/* Keep the donation flow readable on narrow screens. */
+@media (max-width: 768px) {
+  .donation-payment-wrapper {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+    width: calc(100% - 24px);
+    min-height: 0;
+    padding: 12px;
+    margin: 12px auto;
+  }
+
+  .payment-options,
+  .donate-money-details {
+    grid-column: 1;
+    width: 100%;
+    padding: 12px;
+  }
+
+  .payment-selection {
+    margin-bottom: 24px;
+  }
+
+  .donation-amount {
+    gap: 8px;
+  }
+
+  .donate-money-form .terms-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .donate-money-form .terms-row input[type="checkbox"] {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+    padding: 0;
+  }
+
+  .donate-money-form .terms-row .text-term {
+    min-width: 0;
+    line-height: 1.45;
+  }
+}
+
 @media (max-width: 600px) {
     .donation-payment-wrapper {
         grid-template-columns: 1fr;

@@ -539,3 +539,28 @@ img {
         place-items: center;
     }
 }
+
+/* Keep the mobile header consistent with the homepage navigation. */
+@media (max-width: 768px) {
+  .navbar { justify-content: flex-start; gap: 12px; padding: 12px 20px; }
+  .navbar .brand { order: 1; margin-right: auto; font-size: 1.25rem; }
+  .navbar .brand-icon { width: 38px; height: 38px; }
+  .navbar .mobile-nav-toggle-input { display: block; position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); }
+  .navbar .mobile-nav-toggle { order: 3; display: grid; place-items: center; width: 36px; height: 36px; padding: 4px; border: 2px solid #fff; border-radius: 6px; color: #fff; cursor: pointer; }
+  .navbar .mobile-nav-toggle svg { width: 22px; height: 22px; }
+  .navbar .mobile-nav-toggle-input:focus-visible + .mobile-nav-toggle { outline: 3px solid #10BFFF; outline-offset: 2px; }
+  .navbar .navbar-right { display: contents; }
+  .navbar .profile-icon { order: 2; }
+  .navbar .navbar-right .search-box { display: none; }
+  .navbar .mobile-nav-toggle-input:checked ~ .navbar-right .search-box { display: flex; order: 5; flex: 0 0 100%; width: 100%; min-width: 0; margin: 8px 0 0; padding: 8px 12px; }
+  .navbar .navbar-right .search-box input { width: 100%; min-width: 0; }
+  .navbar .mobile-nav-toggle-input ~ .nav-links { order: 4; display: none; flex: 0 0 100%; flex-direction: column; flex-wrap: nowrap; align-items: stretch; width: 100%; gap: 0; padding: 8px 0 0; overflow: visible; font-size: 0.9rem; }
+  .navbar .mobile-nav-toggle-input:checked ~ .nav-links { display: flex; }
+  .navbar .nav-links > li { flex: 0 0 auto; width: 100%; padding: 0; }
+  .navbar .nav-links > li > a { display: block; padding: 9px 0; }
+  .navbar .nav-links .dropdown { flex-wrap: wrap; }
+  .navbar .nav-links .dropdown > a { flex: 1; }
+  .navbar .nav-links .dropdown > .submenu { position: static; display: flex; flex: 0 0 100%; min-width: 0; padding: 0 0 4px 14px; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .navbar .nav-links .submenu a { padding: 7px 0; }
+  .navbar .nav-links .donate-btn { display: block; width: 100%; padding: 10px 16px; font-size: 0.9rem; text-align: center; }
+}
