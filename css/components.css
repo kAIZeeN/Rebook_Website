@@ -38,12 +38,13 @@
 
 /* carousel */
 .carousel { background: var(--surface); border-radius: var(--radius); padding: 1.25rem 0 0; }
-.carousel__viewport { overflow: hidden; }
+/* contain stops the scrollable track from ever widening the page (mobile pinch-zoom blank-space bug) */
+.carousel__viewport { overflow: hidden; contain: paint; max-width: 100%; }
 .carousel__track {
   list-style: none; margin: 0; padding: 0; display: flex;
-  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; max-width: 100%;
 }
-.carousel__item { flex: 0 0 calc(100% / var(--per-view, 2)); scroll-snap-align: start; padding: 0 .75rem; }
+.carousel__item { flex: 0 0 calc(100% / var(--per-view, 2)); scroll-snap-align: start; padding: 0 .75rem; min-width: 0; }
 
 .carousel--books      { --per-view: 2; }
 .carousel--categories { --per-view: 1; }

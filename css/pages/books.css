@@ -2,6 +2,20 @@
 .books-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .books-head h1, .books-head h2 { margin: 0; }
 
+/* mobile: stack heading and filter instead of squeezing them side by side */
+@media (max-width: 600px) {
+  .books-head { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  .filter { width: 100%; }
+  .categories { margin-top: 2rem; }
+}
+
+/* small phones: show one book per view so covers and titles stay readable */
+@media (max-width: 420px) {
+  .carousel--books { --per-view: 1; }
+  .book-card .img-slot { width: min(100%, 220px); }
+  .category-card__name { font-size: 1.05rem; }
+}
+
 /* status filter pills */
 .filter { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
 .filter__label { font-weight: 600; }
