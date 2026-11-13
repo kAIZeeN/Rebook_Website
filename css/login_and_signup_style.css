@@ -1185,3 +1185,52 @@ img {
     min-width: 0;
   }
 }
+
+#darkmodebtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background-color: #fff;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+
+
+body.dark-mode .welcome-section {
+  background: #121212;
+}
+
+body.dark-mode .welcome-content h1 {
+  color: #f1f1f1;
+}
+
+body.dark-mode .welcome-content h1 span {
+  color: #10BFFF;
+}
+
+body.dark-mode .login-btn {
+  background: #1653E1;
+}
+body.dark-mode .login-btn:hover {
+  background: #10BFFF;
+}
+
+body.dark-mode .signup-btn {
+  background: #3a3a3a;
+}
+body.dark-mode .signup-btn:hover {
+  background: #555;
+}
+
+body.dark-mode .welcome-logo {
+  background: #f1f1f1;
+  border-radius: 16px;
+  padding: 10px;
+}

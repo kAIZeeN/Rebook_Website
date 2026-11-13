@@ -1,0 +1,248 @@
+/* ===== Toggle button ===== */
+#darkmodebtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background-color: #fff;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+#darkmodebtn:hover { transform: scale(1.08); }
+#darkmodebtn:focus-visible { outline: 3px solid #10BFFF; outline-offset: 3px; }
+#darkmodebtn svg { fill: currentColor; }
+#darkmodebtn svg:nth-child(2) { display: none; }
+
+body.dark-mode #darkmodebtn { background-color: #2a2a2a; color: #f8fafc; }
+body.dark-mode #darkmodebtn svg:first-child { display: none; }
+body.dark-mode #darkmodebtn svg:nth-child(2) { display: block; }
+
+/* ===== Page base ===== */
+body { transition: background-color 0.3s, color 0.3s; }
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;               /* FIX: text was staying dark */
+}
+
+/* ===== Homepage ===== */
+body.dark-mode .carousel-track-container,
+body.dark-mode .book-cover { background-color: #242424; }
+body.dark-mode .book-cover { border-color: #444; }
+body.dark-mode .carousel-arrow { color: #f1f1f1; }
+body.dark-mode .carousel-dots .dot { background: #555; }
+body.dark-mode .carousel-dots .dot.active { background: #f1f1f1; }
+
+/* Search box (needs the extra specificity to beat .navbar .search-box input) */
+body.dark-mode .navbar .search-box { background-color: #242424; }
+body.dark-mode .navbar .search-box input {
+  background: transparent;
+  color: #f1f1f1;
+}
+body.dark-mode .navbar .search-box input::placeholder,
+body.dark-mode .navbar .search-box svg { color: #aaa; }
+
+/* ===== Donation pages ===== */
+body.dark-mode .donation-wrapper,
+body.dark-mode .button-card,
+body.dark-mode .donatebook-form,
+body.dark-mode .book-info-form,
+body.dark-mode .book-image,
+body.dark-mode .donation-payment-wrapper { background-color: #242424; }
+
+body.dark-mode .Donate-button-container,
+body.dark-mode .donatebook-form-container { background-color: #121212; }
+
+body.dark-mode .donation-payment-wrapper { border-color: #444; }
+body.dark-mode .text-term { color: #bbb; }
+
+/* Form fields */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode #description,
+body.dark-mode #language,
+body.dark-mode #condition,
+body.dark-mode #category,
+body.dark-mode #payment-method {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  border-color: #555;
+}
+body.dark-mode .payment-method-row,
+body.dark-mode .custom-amount { border-color: #555; }
+
+body.dark-mode .payment-button,
+body.dark-mode .price-button,
+body.dark-mode .custom-amount {
+  background-color: #242424;
+  color: #f1f1f1;
+  border-color: #555;
+}
+body.dark-mode .payment-button:hover,
+body.dark-mode .price-button:hover { background-color: #10BFFF; color: #000; }
+
+/* ===== Dark Mode: Book Details Table ===== */
+
+body.dark-mode .info-table {
+    background-color: #242424;
+    color: #FFFFFF;
+    border-collapse: collapse;
+}
+
+/* Table headers */
+body.dark-mode .info-table th {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border: 1px solid #555555;
+    padding: 15px;
+    text-align: left;
+}
+
+/* Table information */
+body.dark-mode .info-table td {
+    background-color: #242424;
+    color: #FFFFFF;
+    border: 1px solid #555555;
+    padding: 15px;
+}
+
+/* Book details breadcrumb */
+body.dark-mode .breadcrumb a {
+    color: #10BFFF;
+}
+
+/* ===== DARK MODE: BORROW PAGE ===== */
+
+/* Main page background */
+body.dark-mode {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+/* Borrow card background */
+body.dark-mode .borrow-card {
+    background-color: #242424;
+    color: #FFFFFF;
+}
+
+/* Borrow page headings */
+body.dark-mode .borrow-card h1 {
+    color: #FFFFFF;
+}
+
+/* Book title below the cover */
+body.dark-mode .borrow-card__book {
+    color: #FFFFFF;
+}
+
+/* Form labels */
+body.dark-mode .borrow-card label {
+    color: #FFFFFF;
+}
+
+/* Form inputs */
+body.dark-mode .borrow-card input:not([type="checkbox"]) {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: 1px solid #666666;
+}
+
+/* Input placeholder */
+body.dark-mode .borrow-card input::placeholder {
+    color: #BBBBBB;
+}
+
+/* Checkbox */
+body.dark-mode .borrow-card input[type="checkbox"] {
+    accent-color: #1653E1;
+}
+
+/* Privacy Notice link */
+body.dark-mode .borrow-card a {
+    color: #10BFFF;
+}
+
+/* Submit button */
+body.dark-mode .borrow-card .btn {
+    background-color: #1653E1;
+    color: #FFFFFF;
+}
+
+/* Footer */
+body.dark-mode .site-footer {
+    background-color: #0C00AE;
+    color: #FFFFFF;
+}
+
+
+/* ===== DARK MODE: BORROW CONFIRMATION PAGE ===== */
+
+/* Card */
+body.dark-mode .confirm {
+    background-color: #242424;
+    color: #FFFFFF;
+}
+
+body.dark-mode .confirm h1,
+body.dark-mode .confirm h2 {
+    color: #FFFFFF;
+}
+
+body.dark-mode .confirm__lead {
+    color: #DDDDDD;
+}
+
+/* Summary table (the part that was unreadable) */
+body.dark-mode .summary {
+    background-color: #1A1A1A;
+    border: 1px solid #555555;
+}
+
+body.dark-mode .summary__row {
+    border-color: #444444;
+}
+
+body.dark-mode .summary dt {
+    color: #BBBBBB;
+}
+
+body.dark-mode .summary dd {
+    color: #FFFFFF;
+}
+
+/* "Reserved" badge */
+body.dark-mode .pill-badge--reserved {
+    background-color: #1E3A8A;
+    color: #FFFFFF;
+}
+
+/* What happens next list */
+body.dark-mode .next-steps,
+body.dark-mode .next-steps li {
+    color: #EEEEEE;
+}
+
+/* Outline button */
+body.dark-mode .confirm .btn--outline {
+    background-color: transparent;
+    color: #10BFFF;
+    border-color: #10BFFF;
+}
+body.dark-mode .confirm .btn--outline:hover {
+    background-color: #10BFFF;
+    color: #000000;
+}
+
+/* ===== DARK MODE: CONTACT PAGE BACKGROUND ===== */
+html:has(body.dark-mode),
+body.dark-mode,
+body.dark-mode .page,
+body.dark-mode main,
+body.dark-mode .contact-container {
+    background-color: #121212;
+}

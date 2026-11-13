@@ -1461,3 +1461,21 @@ display: flex;
     min-width: 0;
   }
 }
+
+
+/* ===== Dark mode: book detail table ===== */
+body.dark-mode .info-table th,
+body.dark-mode .info-table td {
+  background: #242424;
+  color: #f1f1f1;
+  border-color: #555;
+}
+
+body.dark-mode .info-table th {
+  background: #1a1a1a;
+  color: #cfcfcf;
+}
+
+body.dark-mode .breadcrumb a {
+  color: #10BFFF;
+}

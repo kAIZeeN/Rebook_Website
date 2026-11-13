@@ -145,6 +145,8 @@ img {
   color: var(--white);
 }
 
+
+
 /* ===== Hero ===== */
 .hero {
   background: var(--violet);
@@ -1462,4 +1464,19 @@ display: flex;
     width: 100%;
     min-width: 0;
   }
+}
+
+#darkmodebtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background-color: #fff;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
