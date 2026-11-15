@@ -68,11 +68,23 @@
 .search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; }
 
 .account {
-  order: 3; width: 34px; height: 34px; flex: none; margin-left: 0;
+  order: 4; width: 34px; height: 34px; flex: none; margin-left: 0;
   color: #FFFFFF; border: 2px solid #FFFFFF; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
 }
 .account svg { width: 18px; height: 18px; }
+
+.site-header__inner #darkmodebtn {
+  order: 3;
+  margin-left: 0;
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+.site-header__inner > .account + #darkmodebtn,
+.site-header__inner > #darkmodebtn + .account {
+  margin-left: 0;
+}
 
 .account:hover { background: rgba(255,255,255,.15); }
 .nav-toggle-input {

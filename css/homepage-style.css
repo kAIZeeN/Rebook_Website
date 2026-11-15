@@ -103,6 +103,10 @@ img {
   gap: 18px;
 }
 
+.navbar-right .search-box { order: 1; }
+.navbar-right #darkmodebtn { order: 2; }
+.navbar-right .profile-icon { order: 3; }
+
 .search-box {
   display: flex;
   align-items: center;
