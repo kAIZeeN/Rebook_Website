@@ -113,3 +113,24 @@ if (book) {
   if (caption) caption.textContent = `Details of ${book.title}`;
 
 }
+
+const parameters = new URLSearchParams(window.location.search);
+const selectedSchedule = parameters.get("schedule");
+const scheduleOutput = document.querySelector("#preferredSchedule");
+const scheduleInput = document.querySelector("#schedule");
+
+if (scheduleInput) {
+  const today = new Date();
+  today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  scheduleInput.min = today.toISOString().split("T")[0];
+}
+
+if (selectedSchedule && scheduleOutput) {
+  const date = new Date(`${selectedSchedule}T00:00:00`);
+
+  scheduleOutput.textContent = date.toLocaleDateString("en-PH", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+}
