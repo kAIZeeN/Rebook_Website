@@ -65,18 +65,18 @@
                 <button class="price-button" type="button">₱1,000</button>
                 <label class="custom-amount" for="custom-amount">
                     <span aria-hidden="true">₱</span>
-                    <input type="number" id="custom-amount" placeholder="Enter your desired amount" min="1">
+                    <input type="number" id="custom-amount" placeholder="Enter your desired amount" min="20">
                     <span>PHP</span>
                 </label>
             </div>
         </section>
         <section class="donate-money-details">
             <h2 class="donate-money-form-title">Enter Your Details</h2>
-            <form class="donate-money-form" action="donate-money-confirmation.html" method="get">
-                <input type="text" id="first-name" placeholder="First Name" required>
-                <input type="text" id="last-name" placeholder="Last Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{11}" required>
+            <form class="donate-money-form" id="gcash-donation-form">
+                <input type="text" id="first-name" name="firstName" placeholder="First Name" required>
+                <input type="text" id="last-name" name="lastName" placeholder="Last Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{11}" required>
                 <div class="payment-method-row">
                     <img class="payment-method-image" src="assets/images/gcash-logo.png" alt="GCash">
                     <select name="payment-method" id="payment-method" required>
@@ -90,7 +90,7 @@
                     <input type="checkbox" id="terms" required>
                     <label for="terms" class="text-term"> I agree to the collection and use of my personal information as stated in the Privacy Notice.</label>
                 </div>
-                <button class="submit-button" type="submit">Submit</button>
+                <button class="submit-button" type="submit">Continue to GCash</button>
             </form>
         </section>
     </main>
@@ -106,5 +106,6 @@
     </div>
   </footer>
 <script src="javascript/darkbtn.js"></script>
+<script src="javascript/donatemoney.js"></script>
 </body>
 </html>

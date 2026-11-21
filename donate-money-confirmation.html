@@ -65,10 +65,16 @@
     <section class="confirm" aria-labelledby="confirm-title">
       <div class="confirm__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
       <h1 id="confirm-title">Thank you for donating, Juan!</h1>
-      <p class="confirm__lead">Your donation was received. Payment is simulated for this project, so no real money was charged.</p>
+      <p class="confirm__lead" id="confirmation-lead">Your donation was received.</p>
 
       <!-- sample info for now -->
-      <dl class="summary"><div class="summary__row"><dt>Amount</dt><dd>₱500.00</dd></div><div class="summary__row"><dt>Frequency</dt><dd>Give Once</dd></div><div class="summary__row"><dt>Payment method</dt><dd>Gcash</dd></div><div class="summary__row"><dt>Reference no.</dt><dd>RB-2026-000123</dd></div><div class="summary__row"><dt>Receipt sent to</dt><dd>juan@example.com</dd></div></dl>
+      <dl class="summary">
+        <div class="summary__row"><dt>Amount</dt><dd id="confirmation-amount">₱500.00</dd></div>
+        <div class="summary__row"><dt>Frequency</dt><dd>Give Once</dd></div>
+        <div class="summary__row"><dt>Payment method</dt><dd id="confirmation-method">GCash</dd></div>
+        <div class="summary__row"><dt>Reference no.</dt><dd id="confirmation-reference">RB-2026-000123</dd></div>
+        <div class="summary__row"><dt>Receipt sent to</dt><dd id="confirmation-email">juan@example.com</dd></div>
+      </dl>
 
       <div class="next-steps">
         <h2>What happens next</h2>
@@ -91,5 +97,6 @@
     </div>
   </footer>
 <script src="javascript/darkbtn.js"></script>
+<script src="javascript/donate-money-confirmation.js"></script>
 </body>
 </html>

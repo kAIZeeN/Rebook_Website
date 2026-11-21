@@ -28,6 +28,22 @@ This project is designed as a web development website for a community book-shari
 - `css/` — stylesheet files
 - `assets/` — images and design assets
 
+## Run locally
+
+Start the mock GCash server:
+
+```cmd
+python mock_gcash.py
+```
+
+In a second terminal, start ReBook:
+
+```cmd
+npm.cmd start
+```
+
+Open `http://localhost:3000/donatemoney.html`.
+
 ## How to Run
 
 Because this is a front-end static website, you can run it by opening any of the HTML files in a browser.
