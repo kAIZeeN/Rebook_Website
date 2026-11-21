@@ -5,6 +5,7 @@
 }
 .confirm__icon { width: 64px; height: 64px; margin: 0 auto 1rem; border-radius: 50%; background: var(--green); color: var(--white); display: grid; place-items: center; }
 .confirm__icon svg { width: 34px; height: 34px; }
+.confirm__icon.is-cancelled { background: #b42318; font-size: 2.5rem; font-weight: 700; }
 .confirm h1 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin-bottom: .4rem; }
 .confirm__lead { color: #333; }
 

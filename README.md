@@ -30,19 +30,7 @@ This project is designed as a web development website for a community book-shari
 
 ## Run locally
 
-Start the mock GCash server:
-
-```cmd
-python mock_gcash.py
-```
-
-In a second terminal, start ReBook:
-
-```cmd
-npm.cmd start
-```
-
-Open `http://localhost:3000/donatemoney.html`.
+Open `donatemoney.html` directly in a browser. The mock GCash checkout and confirmation are local HTML pages; no backend or payment account is required.
 
 ## How to Run
 

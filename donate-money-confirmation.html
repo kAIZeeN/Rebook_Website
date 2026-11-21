@@ -63,7 +63,7 @@
 
   <main id="main" class="container" style="padding-block:1rem">
     <section class="confirm" aria-labelledby="confirm-title">
-      <div class="confirm__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
+      <div class="confirm__icon" id="confirmation-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
       <h1 id="confirm-title">Thank you for donating, Juan!</h1>
       <p class="confirm__lead" id="confirmation-lead">Your donation was received.</p>
 
@@ -76,7 +76,7 @@
         <div class="summary__row"><dt>Receipt sent to</dt><dd id="confirmation-email">juan@example.com</dd></div>
       </dl>
 
-      <div class="next-steps">
+      <div class="next-steps" id="next-steps">
         <h2>What happens next</h2>
         <ol>
           <li>A confirmation email with your reference number will be sent.</li>

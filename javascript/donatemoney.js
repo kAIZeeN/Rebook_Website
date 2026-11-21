@@ -5,40 +5,28 @@ document.querySelectorAll(".price-button").forEach((button) => {
   });
 });
 
-document.getElementById("gcash-donation-form").addEventListener("submit", async (event) => {
+document.getElementById("gcash-donation-form").addEventListener("submit", (event) => {
   event.preventDefault();
   const amount = Number(document.getElementById("custom-amount").value);
-  const submitButton = event.currentTarget.querySelector(".submit-button");
+  const form = event.currentTarget;
 
   if (!amount || amount < 20 || amount > 100000) {
     alert("Please enter a GCash donation amount between PHP 20 and PHP 100,000.");
     return;
   }
 
-  submitButton.disabled = true;
-  submitButton.textContent = "Processing...";
-
-  try {
-    const response = await fetch("/api/payments/gcash", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      signal: AbortSignal.timeout(15000),
-      body: JSON.stringify({
-        amount,
-        firstName: document.getElementById("first-name").value,
-        lastName: document.getElementById("last-name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value
-      })
-    });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.error || "Payment could not be created.");
-    window.location.assign(result.redirectUrl);
-  } catch (error) {
-    alert(error.name === "TimeoutError"
-      ? "The payment request timed out. Check that both local servers are running and try again."
-      : error.message);
-    submitButton.disabled = false;
-    submitButton.textContent = "Continue to GCash";
+  if (document.getElementById("payment-method").value !== "gcash") {
+    alert("This local mockup currently supports GCash only.");
+    return;
   }
+
+  const params = new URLSearchParams({
+    amount: amount.toFixed(2),
+    name: `${document.getElementById("first-name").value.trim()} ${document.getElementById("last-name").value.trim()}`,
+    email: document.getElementById("email").value.trim(),
+    reference: `RB-${Date.now()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`,
+    method: "GCash"
+  });
+
+  window.location.assign(`mock-gcash.html?${params.toString()}`);
 });
