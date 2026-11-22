@@ -257,6 +257,12 @@ img {
   display: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    scroll-behavior: auto;
+  }
+}
+
 .book-card {
   flex: 0 0 auto;
   width: 110px;

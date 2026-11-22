@@ -5,6 +5,26 @@ document.querySelectorAll(".price-button").forEach((button) => {
   });
 });
 
+const frequencyInput = document.getElementById("donation-frequency");
+const frequencyNote = document.getElementById("frequency-note");
+
+document.querySelectorAll(".payment-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const frequency = button.dataset.frequency;
+    frequencyInput.value = frequency;
+
+    document.querySelectorAll(".payment-button").forEach((option) => {
+      const selected = option === button;
+      option.classList.toggle("is-selected", selected);
+      option.setAttribute("aria-pressed", String(selected));
+    });
+
+    frequencyNote.textContent = frequency === "monthly"
+      ? "Monthly donation selected. This demo records one mock payment and does not create recurring charges."
+      : "One-time donation selected.";
+  });
+});
+
 document.getElementById("gcash-donation-form").addEventListener("submit", (event) => {
   event.preventDefault();
   const amount = Number(document.getElementById("custom-amount").value);
@@ -25,7 +45,8 @@ document.getElementById("gcash-donation-form").addEventListener("submit", (event
     name: `${document.getElementById("first-name").value.trim()} ${document.getElementById("last-name").value.trim()}`,
     email: document.getElementById("email").value.trim(),
     reference: `RB-${Date.now()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`,
-    method: "GCash"
+    method: "GCash",
+    frequency: frequencyInput.value
   });
 
   window.location.assign(`mock-gcash.html?${params.toString()}`);

@@ -18,6 +18,9 @@ if (params.get("reference")) {
 if (params.get("method")) {
   document.getElementById("confirmation-method").textContent = params.get("method");
 }
+if (params.get("frequency") === "monthly") {
+  document.getElementById("confirmation-frequency").textContent = "Monthly";
+}
 
 if (paymentStatus === "cancelled") {
   document.getElementById("confirm-title").textContent = "Payment cancelled";
@@ -28,5 +31,7 @@ if (paymentStatus === "cancelled") {
   document.getElementById("next-steps").hidden = true;
 } else if (paymentStatus === "confirmed") {
   document.getElementById("confirmation-lead").textContent =
-    "Your mock GCash donation was confirmed. No real payment was made.";
+    params.get("frequency") === "monthly"
+      ? "Your mock monthly donation was confirmed as one demo payment. No real or recurring payment was made."
+      : "Your mock GCash donation was confirmed. No real payment was made.";
 }

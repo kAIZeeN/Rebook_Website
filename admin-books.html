@@ -6,6 +6,7 @@
     <title>Admin Books | ReBook</title>
     <link rel="stylesheet" href="css/admin-books-style.css">
     <link rel="stylesheet" href="css/admin-header.css">
+    <link rel="stylesheet" href="css/admin-interactions.css">
   </head>
   <body>
     <header class="admin-header">
@@ -35,6 +36,11 @@
     <main class="books-main">
       <h1>Books</h1>
       <p class="inventory-count">13 books in inventory</p>
+      <div class="admin-table-tools">
+        <label>Search books <input type="search" data-admin-search placeholder="Title, author, or category"></label>
+        <label>Review status <select data-admin-filter><option value="all">All</option><option value="pending">Pending</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select></label>
+      </div>
+      <p class="admin-feedback" aria-live="polite"></p>
 
       <div class="table-scroll">
         <table class="admin-books__table">
@@ -145,6 +151,7 @@
       </div>
 
     </main>
+    <script src="javascript/admin-interactions.js"></script>
   </body>
 </html>
   

@@ -53,9 +53,10 @@
     <main class="donation-wrapper donation-payment-wrapper">
         <section class="payment-options">
             <div class="payment-selection">
-                <button class="payment-button" type="button">Give Once</button>
-                <button class="payment-button" type="button">Monthly</button>
+                <button class="payment-button is-selected" type="button" data-frequency="once" aria-pressed="true">Give Once</button>
+                <button class="payment-button" type="button" data-frequency="monthly" aria-pressed="false">Monthly</button>
             </div>
+            <p class="frequency-note" id="frequency-note" aria-live="polite">One-time donation</p>
             <div class="donation-amount">
                 <button class="price-button" type="button">₱100</button>
                 <button class="price-button" type="button">₱200</button>
@@ -73,6 +74,7 @@
         <section class="donate-money-details">
             <h2 class="donate-money-form-title">Enter Your Details</h2>
             <form class="donate-money-form" id="gcash-donation-form">
+                <input type="hidden" id="donation-frequency" name="frequency" value="once">
                 <input type="text" id="first-name" name="firstName" placeholder="First Name" required>
                 <input type="text" id="last-name" name="lastName" placeholder="Last Name" required>
                 <input type="email" id="email" name="email" placeholder="Email" required>

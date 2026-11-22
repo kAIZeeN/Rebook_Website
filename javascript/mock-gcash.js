@@ -3,6 +3,7 @@ const amount = Number(params.get("amount"));
 const name = params.get("name");
 const email = params.get("email");
 const reference = params.get("reference");
+const frequency = params.get("frequency") === "monthly" ? "monthly" : "once";
 
 if (!amount || !name || !email || !reference) {
   document.querySelector(".checkout-content").innerHTML =
@@ -13,8 +14,24 @@ if (!amount || !name || !email || !reference) {
     `₱${amount.toLocaleString("en-PH", { minimumFractionDigits: 2 })}`;
   document.getElementById("payment-reference").textContent = reference;
   document.getElementById("payment-email").textContent = email;
+  document.getElementById("payment-frequency").textContent = frequency === "monthly" ? "Monthly" : "One-time";
 
   function finishPayment(status) {
+    if (status === "confirmed") {
+      const storageKey = "rebook-admin-donations";
+      const records = JSON.parse(localStorage.getItem(storageKey) || "[]");
+      records.push({
+        id: reference,
+        name,
+        email,
+        amount,
+        frequency,
+        reference,
+        date: new Date().toISOString(),
+        status: "pending"
+      });
+      localStorage.setItem(storageKey, JSON.stringify(records));
+    }
     params.set("status", status);
     window.location.assign(`donate-money-confirmation.html?${params.toString()}`);
   }

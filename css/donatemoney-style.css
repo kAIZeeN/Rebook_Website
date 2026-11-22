@@ -915,6 +915,21 @@ display: flex;
     background-color: #10BFFF;  
 }
 
+.payment-button.is-selected {
+    border-color: #1653E1;
+    background: #1653E1;
+    color: #fff;
+}
+
+.frequency-note {
+    min-height: 1.5em;
+    margin: 0 0 16px;
+    color: #333;
+    font-size: .9rem;
+}
+
+.payment-selection { margin-bottom: 8px; }
+
 .payment-method-row {
     display: flex;
     align-items: center;

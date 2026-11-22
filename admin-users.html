@@ -6,6 +6,7 @@
     <title>Admin Users | ReBook</title>
     <link rel="stylesheet" href="css/admin-users-style.css" />
     <link rel="stylesheet" href="css/admin-header.css" />
+    <link rel="stylesheet" href="css/admin-interactions.css" />
   </head>
   <body>
     <header class="admin-header">
@@ -45,6 +46,7 @@
 
       <label class="search-label" for="user-search">Search by username</label>
       <input id="user-search" class="user-search" type="search" placeholder="Username" />
+      <p class="admin-feedback" aria-live="polite"></p>
 
       <div class="table-scroll">
         <table class="admin-users__table">
@@ -194,5 +196,6 @@
         </nav>
       </div>
     </main>
+    <script src="javascript/admin-interactions.js"></script>
   </body>
 </html>
