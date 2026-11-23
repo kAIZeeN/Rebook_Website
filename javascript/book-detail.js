@@ -116,6 +116,7 @@ if (book) {
 
 const parameters = new URLSearchParams(window.location.search);
 const selectedSchedule = parameters.get("schedule");
+const requestReference = parameters.get("reference");
 const scheduleOutput = document.querySelector("#preferredSchedule");
 const scheduleInput = document.querySelector("#schedule");
 
@@ -133,4 +134,9 @@ if (selectedSchedule && scheduleOutput) {
     month: "long",
     day: "numeric"
   });
+}
+
+if (requestReference) {
+  const referenceOutput = document.querySelector("[data-borrow-reference]");
+  if (referenceOutput) referenceOutput.textContent = requestReference;
 }

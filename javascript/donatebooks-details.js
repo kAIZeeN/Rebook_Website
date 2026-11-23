@@ -31,5 +31,21 @@ document.getElementById("submit-book-donation").addEventListener("click", () => 
     reference: `RB-${Date.now()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`
   });
 
+  const donatedBooks = JSON.parse(localStorage.getItem("rebook-admin-book-donations") || "[]");
+  donatedBooks.push({
+    id: params.get("reference"),
+    donor: donorName || "Donor",
+    email: donorParams.get("email") || "",
+    title: document.getElementById("book-title").value.trim(),
+    author: document.getElementById("author").value.trim(),
+    isbn: document.getElementById("ISBN").value.trim(),
+    language: document.getElementById("language").selectedOptions[0].text,
+    condition: document.getElementById("condition").selectedOptions[0].text,
+    category: document.getElementById("category").selectedOptions[0].text,
+    description: document.getElementById("description").value.trim(),
+    date: new Date().toISOString()
+  });
+  localStorage.setItem("rebook-admin-book-donations", JSON.stringify(donatedBooks));
+
   window.location.assign(`donate-book-confirmation.html?${params.toString()}`);
 });

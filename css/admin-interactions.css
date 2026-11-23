@@ -83,9 +83,34 @@
 .admin-books__table .row-actions .reject-action { color: #bb2525; }
 .admin-books__table .row-actions .admin-action-button { min-width: 0; padding: 3px 4px; font-size: 8px; white-space: nowrap; }
 .admin-books__table .row-actions .review-status { grid-column: 1 / -1; text-align: center; }
+.admin-books__table td.book-title-cell {
+  display: table-cell;
+  position: relative;
+  padding-left: 36px;
+  vertical-align: middle;
+}
+.admin-books__table td.book-title-cell > .book-cover {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  float: none;
+  margin: 0;
+  transform: translateY(-50%);
+}
+.admin-books__table td.book-title-cell > span { display: block; }
+.admin-books__table tr[data-donated-book] td.book-title-cell { padding-left: 8px; }
+.donated-book-info { display: grid; gap: 3px; min-width: 0; text-align: left; overflow-wrap: anywhere; }
+.donated-book-info small { color: #555; font-size: 9px; }
 .admin-subnav .subnav-tab { cursor: pointer; font-family: inherit; }
 .borrow-main .book-search { margin-bottom: 10px; }
 .borrow-main .table-scroll { margin-top: 16px; }
+.admin-borrow__table .borrower-details--request { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; white-space: normal; overflow-wrap: anywhere; }
+.admin-borrow__table .borrower-details--request span { display: block; }
+.admin-borrow__table td.book-title-cell { display: table-cell; min-height: 0; }
+.admin-borrow__table td.book-title-cell .book-cover { float: left; margin: 0 8px 4px 0; }
+.admin-borrow__table td.book-title-cell > span { display: block; }
+.admin-borrow__table .review-status { display: inline-block; width: max-content; margin: 0 auto; padding: 2px 8px; border-radius: 999px; background: #f1f3f5; color: #4b5563; font-size: 9px; }
+.admin-borrow__table .row-actions .review-status { grid-column: 1 / -1; }
 .admin-filter-label { font: 12px/1.4 Arial, sans-serif; }
 
 .donation-records { margin-top: 2.5rem; }

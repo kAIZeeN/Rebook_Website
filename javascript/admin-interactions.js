@@ -43,6 +43,9 @@ function setupAdminTable() {
   var tableBody = adminMain.querySelector("tbody");
   if (!tableBody) return;
 
+  if (adminPage === "admin-books.html") addDonatedBooks(tableBody);
+  if (adminPage === "admin-borrow.html") addBorrowRequests(tableBody);
+
   var pageKey = "rebook-admin-" + adminPage + "-state";
   var state = readAdminData(pageKey, { removed: [], statuses: {}, edits: {} });
   var search = adminMain.querySelector("[data-admin-search], #borrow-search, #user-search");
@@ -51,7 +54,7 @@ function setupAdminTable() {
 
   for (var i = 0; i < rows.length; i++) {
     var row = rows[i];
-    var key = adminPage + "-" + i;
+    var key = row.dataset.adminKey || adminPage + "-" + i;
     row.dataset.adminKey = key;
     row.dataset.adminStatus = state.statuses[key] || "pending";
 
@@ -260,6 +263,106 @@ function setupAdminTable() {
       var borrower = row.cells[1].querySelector(".borrower-details");
       borrower.textContent = values.borrower;
     }
+  }
+}
+
+function addDonatedBooks(tableBody) {
+  var donatedBooks = readAdminData("rebook-admin-book-donations", []);
+  for (var i = 0; i < donatedBooks.length; i++) {
+    var book = donatedBooks[i];
+    var row = document.createElement("tr");
+    row.dataset.adminKey = "donated-book-" + book.id;
+    row.dataset.adminStatus = "pending";
+    row.dataset.donatedBook = "true";
+
+    var titleCell = document.createElement("td");
+    titleCell.className = "book-title-cell";
+    var info = document.createElement("div");
+    info.className = "donated-book-info";
+    var title = document.createElement("span");
+    title.textContent = book.title;
+    var donor = document.createElement("small");
+    donor.textContent = "Donated by " + book.donor + (book.email ? " · " + book.email : "");
+    info.appendChild(title);
+    info.appendChild(donor);
+    titleCell.appendChild(info);
+    row.appendChild(titleCell);
+
+    var categoryCell = document.createElement("td");
+    var category = document.createElement("span");
+    category.className = "category-tag";
+    category.textContent = book.category;
+    categoryCell.appendChild(category);
+    row.appendChild(categoryCell);
+
+    var authorCell = document.createElement("td");
+    authorCell.textContent = book.author;
+    row.appendChild(authorCell);
+
+    var conditionCell = document.createElement("td");
+    conditionCell.textContent = book.condition;
+    row.appendChild(conditionCell);
+
+    var actionsCell = document.createElement("td");
+    var actions = document.createElement("div");
+    actions.className = "row-actions";
+    actions.setAttribute("aria-label", "Actions for donated book " + book.title);
+    actions.innerHTML = '<span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span>';
+    actionsCell.appendChild(actions);
+    row.appendChild(actionsCell);
+    tableBody.appendChild(row);
+  }
+}
+
+function addBorrowRequests(tableBody) {
+  var requests = readAdminData("rebook-admin-borrow-requests", []);
+  for (var i = 0; i < requests.length; i++) {
+    var request = requests[i];
+    var row = document.createElement("tr");
+    row.dataset.adminKey = "borrow-request-" + request.id;
+    row.dataset.adminStatus = "pending";
+
+    var titleCell = document.createElement("td");
+    titleCell.className = "book-title-cell";
+    var title = document.createElement("span");
+    title.textContent = request.title;
+    titleCell.appendChild(title);
+    row.appendChild(titleCell);
+
+    var borrowerCell = document.createElement("td");
+    var borrower = document.createElement("div");
+    borrower.className = "borrower-details borrower-details--request";
+    var borrowerName = document.createElement("span");
+    borrowerName.textContent = request.borrower;
+    var borrowerAddress = document.createElement("span");
+    borrowerAddress.textContent = request.address + ", " + request.barangay + ", " + request.city + " " + request.postalCode;
+    var borrowerSchedule = document.createElement("span");
+    borrowerSchedule.textContent = "Preferred: " + request.schedule;
+    borrower.appendChild(borrowerName);
+    borrower.appendChild(borrowerAddress);
+    borrower.appendChild(borrowerSchedule);
+    borrowerCell.appendChild(borrower);
+    row.appendChild(borrowerCell);
+
+    var standingCell = document.createElement("td");
+    var standing = document.createElement("span");
+    standing.className = "standing-badge standing-badge--active";
+    standing.textContent = "Active";
+    standingCell.appendChild(standing);
+    row.appendChild(standingCell);
+
+    var dateCell = document.createElement("td");
+    dateCell.textContent = new Date(request.date).toLocaleDateString("en-PH");
+    row.appendChild(dateCell);
+
+    var actionsCell = document.createElement("td");
+    var actions = document.createElement("div");
+    actions.className = "row-actions";
+    actions.setAttribute("aria-label", "Actions for borrow request " + request.title);
+    actions.innerHTML = '<span class="approve-action" role="img" aria-label="Approve" title="Approve">✓</span><span class="reject-action" role="img" aria-label="Reject" title="Reject">×</span>';
+    actionsCell.appendChild(actions);
+    row.appendChild(actionsCell);
+    tableBody.appendChild(row);
   }
 }
 
