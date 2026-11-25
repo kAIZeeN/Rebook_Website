@@ -440,6 +440,61 @@ function addBorrowRequests(tableBody) {
   }
 }
 
+function updateDonationStats(records, donationState) {
+  var removedMoney = donationState.removed || [];
+  var moneyDonations = records.filter(function (donation) {
+    return donation.status !== "rejected" && removedMoney.indexOf(donation.id) === -1;
+  });
+  var totalMoney = moneyDonations.reduce(function (total, donation) {
+    var edit = donationState.edits[donation.id] || {};
+    return total + Number(edit.amount !== undefined ? edit.amount : donation.amount || 0);
+  }, 0);
+
+  var bookRecords = readAdminData("rebook-admin-book-donations", []);
+  var bookState = readAdminData("rebook-admin-admin-books.html-state", { removed: [] });
+  var bookDonations = bookRecords.filter(function (book) {
+    return bookState.removed.indexOf("donated-book-" + book.id) === -1;
+  });
+
+  var donors = new Set();
+  var moneyDonors = new Set();
+  var monthlyDonors = new Set();
+  function addDonor(set, email, name, fallback) {
+    var identity = String(email || name || fallback || "").trim().toLowerCase();
+    if (identity) set.add(identity);
+    return identity;
+  }
+
+  moneyDonations.forEach(function (donation) {
+    var identity = addDonor(donors, donation.email, donation.name, donation.id);
+    moneyDonors.add(identity);
+    if (donation.frequency === "monthly") monthlyDonors.add(identity);
+  });
+  bookDonations.forEach(function (book) {
+    addDonor(donors, book.email, book.donor, book.id);
+  });
+
+  var monthlyPercent = moneyDonors.size
+    ? Math.round((monthlyDonors.size / moneyDonors.size) * 100)
+    : 0;
+  var average = moneyDonations.length ? totalMoney / moneyDonations.length : 0;
+  var formatPeso = function (amount) {
+    return String.fromCharCode(8369) + amount.toLocaleString("en-PH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
+
+  var values = {
+    money: formatPeso(totalMoney),
+    books: bookDonations.length.toLocaleString("en-PH"),
+    donors: donors.size.toLocaleString("en-PH"),
+    monthly: monthlyPercent + "%",
+    average: formatPeso(average)
+  };
+  Object.keys(values).forEach(function (key) {
+    var element = document.querySelector('[data-donation-stat="' + key + '"]');
+    if (element) element.textContent = values[key];
+  });
+}
+
 function setupDonationTable() {
   var tableBody = document.querySelector("[data-donation-records]");
   if (!tableBody) return;
@@ -451,6 +506,7 @@ function setupDonationTable() {
 
   function renderDonations() {
     tableBody.textContent = "";
+    updateDonationStats(records, state);
     var visibleRecords = [];
     var query = lowerText(search.value);
 
@@ -543,5 +599,13 @@ function setupDonationTable() {
     }
     renderDonations();
   });
+
+  window.addEventListener("storage", function (event) {
+    if (["rebook-admin-donations", "rebook-admin-donation-state", "rebook-admin-book-donations", "rebook-admin-admin-books.html-state"].indexOf(event.key) === -1) return;
+    records = readAdminData("rebook-admin-donations", []);
+    state = readAdminData("rebook-admin-donation-state", { removed: [], edits: {} });
+    renderDonations();
+  });
+
   renderDonations();
 }
