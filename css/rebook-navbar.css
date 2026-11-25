@@ -65,7 +65,7 @@
   flex-shrink: 0;
 }
 
-.rebook-navbar .search-box {
+.rebook-navbar .navbar-right .search-box {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -76,7 +76,7 @@
   background: #fff;
 }
 
-.rebook-navbar .search-box input {
+.rebook-navbar .navbar-right .search-box input {
   flex: 1;
   min-width: 0;
   border: 0;
@@ -85,7 +85,7 @@
   font-size: 0.95rem;
 }
 
-.rebook-navbar .search-box svg {
+.rebook-navbar .navbar-right .search-box svg {
   width: 18px;
   height: 18px;
   color: #999;
