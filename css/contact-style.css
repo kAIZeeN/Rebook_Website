@@ -1237,9 +1237,6 @@ form {
     margin-left: auto;
   }
 
-  .navbar .navbar-right .search-box {
-    display: none;
-  }
 
   .navbar .nav-links {
     order: 4;
@@ -1427,9 +1424,6 @@ form {
     order: 2;
   }
 
-  .navbar .navbar-right .search-box {
-    display: none;
-  }
 
   .navbar .mobile-nav-toggle-input:checked ~ .navbar-right .search-box {
     display: flex;

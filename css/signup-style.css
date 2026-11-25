@@ -585,7 +585,6 @@ body.dark-mode #darkmodebtn svg:nth-child(2) { display: block; }
   .navbar .mobile-nav-toggle-input:focus-visible + .mobile-nav-toggle { outline: 3px solid #10BFFF; outline-offset: 2px; }
   .navbar .navbar-right { display: contents; }
   .navbar .profile-icon { order: 2; }
-  .navbar .navbar-right .search-box { display: none; }
   .navbar .mobile-nav-toggle-input:checked ~ .navbar-right .search-box { display: flex; order: 5; flex: 0 0 100%; width: 100%; min-width: 0; margin: 8px 0 0; padding: 8px 12px; }
   .navbar .navbar-right .search-box input { width: 100%; min-width: 0; }
   .navbar .mobile-nav-toggle-input ~ .nav-links { order: 4; display: none; flex: 0 0 100%; flex-direction: column; flex-wrap: nowrap; align-items: stretch; width: 100%; gap: 0; padding: 8px 0 0; overflow: visible; font-size: 0.9rem; }
