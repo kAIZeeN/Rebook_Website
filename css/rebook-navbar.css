@@ -1,0 +1,145 @@
+.rebook-navbar {
+  min-height: 72px;
+  padding: 12px 40px;
+  gap: 24px;
+  flex-wrap: nowrap;
+  background: #0C00AE;
+}
+
+.rebook-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 0;
+  color: #fff;
+}
+
+.rebook-navbar .brand-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.rebook-navbar .navbar-collapse {
+  flex-grow: 1;
+}
+
+.rebook-navbar .nav-links {
+  margin: 0 24px 0 auto;
+  gap: 25px;
+  flex-direction: row;
+}
+
+.rebook-navbar .nav-links .nav-link {
+  padding: 8px 0;
+  color: #fff;
+}
+
+.rebook-navbar .rebook-about-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.rebook-navbar .rebook-about-dropdown > .nav-link:first-child {
+  padding-right: 0;
+}
+
+.rebook-navbar .rebook-about-dropdown > .dropdown-toggle-split {
+  padding-left: 4px;
+}
+
+.rebook-navbar .nav-links .donate-link {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #10BFFF;
+  font-weight: 700;
+}
+
+.rebook-navbar .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.rebook-navbar .search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 18px;
+  min-width: 240px;
+  border-radius: 24px;
+  background: #fff;
+}
+
+.rebook-navbar .search-box input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  color: #2c2c2c;
+  font-size: 0.95rem;
+}
+
+.rebook-navbar .search-box svg {
+  width: 18px;
+  height: 18px;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.rebook-navbar .profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.rebook-navbar .profile-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 991.98px) {
+  .rebook-navbar {
+    flex-wrap: wrap;
+    padding: 12px 24px;
+  }
+
+  .rebook-navbar .navbar-collapse {
+    flex-basis: 100%;
+  }
+
+  .rebook-navbar .nav-links {
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 12px 0;
+    gap: 4px;
+  }
+
+  .rebook-navbar .nav-links .nav-link {
+    padding: 8px 0;
+  }
+
+  .rebook-navbar .navbar-right {
+    padding: 8px 0 4px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .rebook-navbar {
+    padding: 10px 16px;
+  }
+
+  .rebook-navbar .navbar-right .search-box {
+    width: min(220px, 48vw);
+    min-width: 0;
+  }
+}
