@@ -59,14 +59,14 @@
 }
 
 .rebook-navbar .navbar-right {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 18px;
   flex-shrink: 0;
 }
 
 .rebook-navbar .navbar-right .search-box {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 8px;
   margin: 0;
