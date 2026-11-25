@@ -2,7 +2,23 @@ const donorParams = new URLSearchParams(window.location.search);
 const bookInfoForm = document.querySelector(".book-info-form");
 const bookImageInput = document.getElementById("book-image");
 const bookImagePreview = document.getElementById("book-image-preview");
+const languageSelect = document.getElementById("language");
+const categorySelect = document.getElementById("category");
+const otherLanguageInput = document.getElementById("language-other");
+const otherCategoryInput = document.getElementById("category-other");
 let bookImagePreviewUrl;
+
+function toggleOtherInput(select, input) {
+  const showInput = select.value === "other";
+  input.hidden = !showInput;
+  input.required = showInput;
+  if (!showInput) input.value = "";
+}
+
+languageSelect.addEventListener("change", () => toggleOtherInput(languageSelect, otherLanguageInput));
+categorySelect.addEventListener("change", () => toggleOtherInput(categorySelect, otherCategoryInput));
+toggleOtherInput(languageSelect, otherLanguageInput);
+toggleOtherInput(categorySelect, otherCategoryInput);
 
 bookImageInput.addEventListener("change", () => {
   const image = bookImageInput.files[0];
@@ -39,9 +55,9 @@ document.getElementById("submit-book-donation").addEventListener("click", () => 
     title: document.getElementById("book-title").value.trim(),
     author: document.getElementById("author").value.trim(),
     isbn: document.getElementById("ISBN").value.trim(),
-    language: document.getElementById("language").selectedOptions[0].text,
+    language: languageSelect.value === "other" ? otherLanguageInput.value.trim() : languageSelect.selectedOptions[0].text,
     condition: document.getElementById("condition").selectedOptions[0].text,
-    category: document.getElementById("category").selectedOptions[0].text,
+    category: categorySelect.value === "other" ? otherCategoryInput.value.trim() : categorySelect.selectedOptions[0].text,
     description: document.getElementById("description").value.trim(),
     date: new Date().toISOString()
   });

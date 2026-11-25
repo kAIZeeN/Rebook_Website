@@ -35,8 +35,55 @@ function lowerText(value) {
 
 if (adminPage === "admin-donation.html") {
   setupDonationTable();
+} else if (adminPage === "admin-dashboard.html") {
+  setupDashboardStats();
 } else if (adminMain) {
   setupAdminTable();
+}
+
+function setupDashboardStats() {
+  function updateStats() {
+    var donations = readAdminData("rebook-admin-donations", []);
+    var donationState = readAdminData("rebook-admin-donation-state", { removed: [] });
+    var books = readAdminData("rebook-admin-book-donations", []);
+    var bookState = readAdminData("rebook-admin-admin-books.html-state", { removed: [], statuses: {} });
+    var users = readAdminData("rebook-registered-users", []);
+    var userState = readAdminData("rebook-admin-admin-users.html-state", { removed: [] });
+    var borrowState = readAdminData("rebook-admin-admin-borrow.html-state", { removed: [], statuses: {} });
+    var donorEmails = [];
+
+    var activeDonations = donations.filter(function (donation) {
+      return donation.status !== "rejected" && donationState.removed.indexOf(donation.id) === -1;
+    });
+    var activeBooks = books.filter(function (book) {
+      var key = "donated-book-" + book.id;
+      return bookState.removed.indexOf(key) === -1 && bookState.statuses[key] !== "rejected";
+    });
+    var activeUsers = users.filter(function (user) {
+      return userState.removed.indexOf("registered-" + user.email.toLowerCase()) === -1;
+    });
+
+    var moneyTotal = activeDonations
+      .reduce(function (sum, donation) { return sum + Number(donation.amount || 0); }, 0);
+
+    activeDonations.forEach(function (donation) { donorEmails.push(donation.email || donation.name); });
+    activeBooks.forEach(function (book) { donorEmails.push(book.email || book.donor); });
+    var donorCount = new Set(donorEmails.filter(Boolean).map(function (email) {
+      return email.toLowerCase();
+    })).size;
+    var returnCount = Object.keys(borrowState.statuses).filter(function (key) {
+      return borrowState.statuses[key] === "returned" && borrowState.removed.indexOf(key) === -1;
+    }).length;
+
+    document.querySelector('[data-dashboard-stat="books"]').textContent = (12500 + activeBooks.length).toLocaleString("en-PH");
+    document.querySelector('[data-dashboard-stat="users"]').textContent = (9500 + activeUsers.length).toLocaleString("en-PH");
+    document.querySelector('[data-dashboard-stat="funds"]').textContent = String.fromCharCode(8369) + (10200 + moneyTotal).toLocaleString("en-PH");
+    document.querySelector('[data-dashboard-stat="returned"]').textContent = (100 + returnCount).toLocaleString("en-PH");
+    document.querySelector('[data-dashboard-stat="donors"]').textContent = (3600 + donorCount).toLocaleString("en-PH");
+  }
+
+  updateStats();
+  window.addEventListener("storage", updateStats);
 }
 
 function addRegisteredUsers(tableBody) {
@@ -171,6 +218,15 @@ function setupAdminTable() {
         group.appendChild(status);
       }
     }
+    if (adminPage === "admin-borrow.html") {
+      var returnButton = group.querySelector(".return-action");
+      if (!returnButton) {
+        returnButton = addAdminButton("Return", "admin-action-button return-action");
+        group.appendChild(returnButton);
+      }
+      returnButton.title = row.dataset.adminStatus === "returned" ? "Undo return" : "Mark returned";
+      returnButton.setAttribute("aria-label", returnButton.title);
+    }
     updateStatusLabel(row);
   }
 
@@ -251,7 +307,20 @@ function setupAdminTable() {
     if (!row) return;
     var key = row.dataset.adminKey;
 
-    if (button.classList.contains("approve-action") || button.classList.contains("reject-action")) {
+    if (button.classList.contains("return-action")) {
+      if (row.dataset.adminStatus !== "approved" && row.dataset.adminStatus !== "returned") {
+        showAdminMessage("Approve the borrow request before marking the book returned.");
+        return;
+      }
+      row.dataset.adminStatus = row.dataset.adminStatus === "returned" ? "approved" : "returned";
+      state.statuses[key] = row.dataset.adminStatus;
+      button.title = row.dataset.adminStatus === "returned" ? "Undo return" : "Mark returned";
+      button.setAttribute("aria-label", button.title);
+      updateStatusLabel(row);
+      saveState();
+      filterAdminRows();
+      showAdminMessage(row.dataset.adminStatus === "returned" ? "Book marked returned." : "Return mark removed.");
+    } else if (button.classList.contains("approve-action") || button.classList.contains("reject-action")) {
       row.dataset.adminStatus = button.classList.contains("approve-action") ? "approved" : "rejected";
       state.statuses[key] = row.dataset.adminStatus;
       updateStatusLabel(row);
