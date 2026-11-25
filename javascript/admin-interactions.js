@@ -39,12 +39,57 @@ if (adminPage === "admin-donation.html") {
   setupAdminTable();
 }
 
+function addRegisteredUsers(tableBody) {
+  var users = readAdminData("rebook-registered-users", []);
+
+  users.forEach(function (user) {
+    var row = document.createElement("tr");
+    row.dataset.adminKey = "registered-" + user.email.toLowerCase();
+
+    var usernameCell = document.createElement("td");
+    var username = document.createElement("span");
+    username.className = "username-cell";
+    var avatar = document.createElement("span");
+    avatar.className = "user-avatar";
+    avatar.textContent = user.username.charAt(0).toUpperCase();
+    username.appendChild(avatar);
+    username.appendChild(document.createTextNode(user.username));
+    usernameCell.appendChild(username);
+    row.appendChild(usernameCell);
+
+    [user.email, "0", user.registeredAt, "—"].forEach(function (value) {
+      var cell = document.createElement("td");
+      cell.textContent = value;
+      row.appendChild(cell);
+    });
+
+    var actionsCell = document.createElement("td");
+    var actions = document.createElement("div");
+    actions.className = "row-actions";
+    actions.innerHTML = `
+      <span class="icon-button edit-action" role="img" aria-label="Edit" title="Edit">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16.5-.8 4.3 4.3-.8L19.8 7.7a2.1 2.1 0 0 0-3-3L4 16.5Z"/><path d="m14.9 6.6 3 3"/></svg>
+      </span>
+      <span class="icon-button block-action" role="img" aria-label="Block" title="Block">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6 6 12 12"/></svg>
+      </span>
+      <span class="icon-button view-action" role="img" aria-label="View" title="View">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+      </span>`;
+    actionsCell.appendChild(actions);
+    row.appendChild(actionsCell);
+
+    tableBody.appendChild(row);
+  });
+}
+
 function setupAdminTable() {
   var tableBody = adminMain.querySelector("tbody");
   if (!tableBody) return;
 
   if (adminPage === "admin-books.html") addDonatedBooks(tableBody);
   if (adminPage === "admin-borrow.html") addBorrowRequests(tableBody);
+  if (adminPage === "admin-users.html") addRegisteredUsers(tableBody);
 
   var pageKey = "rebook-admin-" + adminPage + "-state";
   var state = readAdminData(pageKey, { removed: [], statuses: {}, edits: {} });
@@ -97,7 +142,26 @@ function setupAdminTable() {
     }
 
     if (adminPage === "admin-users.html") {
-      group.appendChild(addAdminButton("Delete", "icon-button delete-action"));
+      if (!group.querySelector(".suspend-action")) {
+        var suspendButton = addAdminButton("Suspend", "icon-button suspend-action");
+        suspendButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>';
+        var blockButton = group.querySelector(".block-action");
+        if (blockButton) blockButton.after(suspendButton);
+        else group.appendChild(suspendButton);
+      }
+      var userBlockButton = group.querySelector(".block-action");
+      if (userBlockButton) {
+        userBlockButton.title = row.dataset.adminStatus === "blocked" ? "Unblock" : "Block";
+        userBlockButton.setAttribute("aria-label", userBlockButton.title);
+      }
+      var userSuspendButton = group.querySelector(".suspend-action");
+      if (userSuspendButton) {
+        userSuspendButton.title = row.dataset.adminStatus === "suspended" ? "Resume" : "Suspend";
+        userSuspendButton.setAttribute("aria-label", userSuspendButton.title);
+      }
+      if (!group.querySelector(".delete-action")) {
+        group.appendChild(addAdminButton("Delete", "icon-button delete-action"));
+      }
     } else {
       group.appendChild(addAdminButton("Edit", "admin-action-button edit-action"));
       group.appendChild(addAdminButton("Delete", "admin-action-button delete-action"));
@@ -135,8 +199,9 @@ function setupAdminTable() {
         var date = row.cells[3] ? row.cells[3].textContent.trim() : "";
         if (userFilter === "new" && date.indexOf("2026-") !== 0) matches = false;
         if (userFilter === "staff") matches = false;
-        if ((userFilter === "suspended" || userFilter === "blocked") && row.dataset.adminStatus !== "blocked") matches = false;
-        if (userFilter === "active" && row.dataset.adminStatus === "blocked") matches = false;
+        if (userFilter === "suspended" && row.dataset.adminStatus !== "suspended") matches = false;
+        if (userFilter === "blocked" && row.dataset.adminStatus !== "blocked") matches = false;
+        if (userFilter === "active" && ["blocked", "suspended"].indexOf(row.dataset.adminStatus) !== -1) matches = false;
       }
 
       row.hidden = !matches;
@@ -204,6 +269,14 @@ function setupAdminTable() {
         filterAdminRows();
         showAdminMessage(title + " deleted.");
       }
+    } else if (button.classList.contains("suspend-action")) {
+      row.dataset.adminStatus = row.dataset.adminStatus === "suspended" ? "active" : "suspended";
+      state.statuses[key] = row.dataset.adminStatus;
+      button.title = row.dataset.adminStatus === "suspended" ? "Resume" : "Suspend";
+      button.setAttribute("aria-label", button.title);
+      saveState();
+      filterAdminRows();
+      showAdminMessage(row.cells[0].textContent.trim() + " is now " + row.dataset.adminStatus + ".");
     } else if (button.classList.contains("block-action")) {
       row.dataset.adminStatus = row.dataset.adminStatus === "blocked" ? "active" : "blocked";
       state.statuses[key] = row.dataset.adminStatus;
@@ -255,7 +328,8 @@ function setupAdminTable() {
     if (values.condition !== undefined) row.cells[3].textContent = values.condition;
     if (values.username !== undefined) {
       var name = row.querySelector(".username-cell");
-      name.querySelector(".user-avatar").textContent = values.username.charAt(0).toUpperCase();
+      var avatar = name.querySelector(".user-avatar");
+      if (avatar) avatar.textContent = values.username.charAt(0).toUpperCase();
       name.lastChild.textContent = values.username;
     }
     if (values.email !== undefined) row.cells[1].textContent = values.email;

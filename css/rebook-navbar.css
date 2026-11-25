@@ -4,6 +4,7 @@
   gap: 24px;
   flex-wrap: nowrap;
   background: #0C00AE;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .rebook-navbar .navbar-brand {
@@ -12,6 +13,9 @@
   gap: 10px;
   margin-right: 0;
   color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .rebook-navbar .brand-icon {
@@ -34,6 +38,8 @@
 .rebook-navbar .nav-links .nav-link {
   padding: 8px 0;
   color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .rebook-navbar .nav-links .rebook-about-dropdown {

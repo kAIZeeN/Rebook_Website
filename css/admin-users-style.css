@@ -339,6 +339,10 @@ select:focus-visible {
   color: #ff3030;
 }
 
+.suspend-action {
+  color: #d97706;
+}
+
 .view-action {
   color: #1683ff;
 }

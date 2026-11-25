@@ -2,8 +2,9 @@
   const page = document.querySelector(".books-page");
   const viewport = page?.querySelector(".carousel--books .carousel__track");
   const items = [...(page?.querySelectorAll(".book-item") || [])];
-  const searchForm = document.querySelector(".search[role='search']");
-  const searchInput = searchForm?.querySelector("input[name='q']");
+  const searchInput = document.querySelector(
+    ".rebook-navbar .search-box input[type='search']"
+  );
   const results = page?.querySelector(".books-results");
   const arrows = [...(page?.querySelectorAll("[data-books-direction]") || [])];
   const dots = [...(page?.querySelectorAll(".carousel__dots .carousel__dot") || [])];
@@ -57,7 +58,6 @@
   };
 
   searchInput.value = new URLSearchParams(window.location.search).get("q") || "";
-  searchForm.addEventListener("submit", (event) => event.preventDefault());
   searchInput.addEventListener("input", applyFilters);
   page.querySelectorAll("input[name='status'], input[name='category']").forEach((input) => {
     input.addEventListener("change", applyFilters);
