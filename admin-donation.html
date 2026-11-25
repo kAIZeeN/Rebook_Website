@@ -6,6 +6,7 @@
   <title>Donations | ReBook Admin</title>
   <link rel="stylesheet" href="css/admin-header.css">
   <link rel="stylesheet" href="css/admin-donation-style.css">
+  <link rel="stylesheet" href="css/admin-interactions.css">
 </head>
 <body>
   <header class="admin-header">
@@ -57,9 +58,26 @@
       </article>
     </section>
 
+    <section class="donation-records" aria-labelledby="donation-records-heading">
+      <h2 id="donation-records-heading">Recorded money donations</h2>
+      <p>Successful payments made through this browser’s local GCash demo appear here.</p>
+      <div class="donation-tools">
+        <label>Search donations <input type="search" data-admin-search placeholder="Donor, email, or reference"></label>
+        <label>Status <select data-admin-filter><option value="all">All</option><option value="pending">Pending</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select></label>
+      </div>
+      <p class="admin-feedback" aria-live="polite"></p>
+      <div class="table-scroll">
+        <table class="donation-record-table">
+          <thead><tr><th>Donor</th><th>Email</th><th>Amount</th><th>Frequency</th><th>Reference</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody data-donation-records><tr><td colspan="8">No money donations recorded in this browser yet.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
     <h2>Giving Numbers</h2>
     <img class="donation-chart" src="assets\images\donation-chart-1.png" alt="Chart showing donation trends over time">
     <img class="donation-chart" src="assets\images\donation-chart-2.png" alt="Chart showing donation trends over time">
   </main>
+  <script src="javascript/admin-interactions.js"></script>
 </body>
 </html>

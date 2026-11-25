@@ -2,17 +2,13 @@ function register(event) {
     event.preventDefault();
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    let correctusername = "";
-    let correctpassword = ""; 
-    if(username === null || username.trim() === "") {
-        alert("Please enter your username.");
+    var email = document.getElementById("email").value;
+    if(username === null || username.trim() === "" || password === null || password.trim() === "" || email === null || email.trim() === "") {
+        alert("Please enter all fields.");
         return;
-        }else {
-        if(username === correctusername && password === correctpassword) {
-            alert("Register successful!");
-        } else {
-            alert("Invalid username or password.");
-        }
+    } else {
+        alert("Registration successful!");
+        window.location.href = "login.html";
     }
 }
 

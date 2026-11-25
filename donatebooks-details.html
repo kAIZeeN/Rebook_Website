@@ -92,7 +92,7 @@
         </div>
         <label class="description-label" for="description">Description (Optional)</label>
         <textarea id="description" placeholder="Write a brief description of the book..."></textarea>
-        <a href="donate-book-confirmation.html"><input type="submit" value="Submit" class="submit-button"></a>
+        <button type="button" class="submit-button" id="submit-book-donation">Submit</button>
        </section>
        
     </main>
@@ -108,21 +108,8 @@
       Web Development Project
     </div>
   </footer>
-  <script src="javascript/darkbtn.js">
-    const bookImageInput = document.querySelector("#book-image");
-    const bookImagePreview = document.querySelector("#book-image-preview");
-    let bookImagePreviewUrl;
-
-    bookImageInput.addEventListener("change", () => {
-      const image = bookImageInput.files[0];
-      if (!image) return;
-
-      if (bookImagePreviewUrl) URL.revokeObjectURL(bookImagePreviewUrl);
-      bookImagePreviewUrl = URL.createObjectURL(image);
-      bookImagePreview.src = bookImagePreviewUrl;
-      bookImagePreview.hidden = false;
-    });
-  </script>
+<script src="javascript/darkbtn.js"></script>
+<script src="javascript/donatebooks-details.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

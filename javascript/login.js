@@ -8,8 +8,9 @@ function login(event) {
         alert("Please enter your username.");
         return;
         }else {
-        if(username === correctusername && password === correctpassword) {
+        if(username.toLowerCase() === correctusername && password.toLowerCase() === correctpassword) {
             alert("Login successful!");
+            window.location.href = "Homepage.html";
         } else {
             alert("Invalid username or password.");
         }
@@ -22,14 +23,15 @@ function Adminlogin(event) {
     var password = document.getElementById("password").value;
     let correctusername = "admin";
     let correctpassword = "admin123"; 
-    if(username === null || username.trim() === "") {
+    if(username.trim() === "") {
         alert("Please enter your username.");
         return;
-        }else {
-        if(username === correctusername && password === correctpassword) {
-            alert("Login successful!");
-        } else {
-            alert("Invalid username or password.");
-        }
+    }
+
+    if(username.trim().toLowerCase() === correctusername && password.toLowerCase() === correctpassword) {
+        alert("Login successful!");
+        window.location.href = "admin-dashboard.html";
+    } else {
+        alert("Invalid username or password.");
     }
 }

@@ -18,6 +18,10 @@
 #darkmodebtn svg { fill: currentColor; }
 #darkmodebtn svg:nth-child(2) { display: none; }
 
+
+.navbar .navbar-right #darkmodebtn { order: 2; }
+.navbar .navbar-right .profile-icon { order: 3; }
+
 body.dark-mode #darkmodebtn { background-color: #2a2a2a; color: #f8fafc; }
 body.dark-mode #darkmodebtn svg:first-child { display: none; }
 body.dark-mode #darkmodebtn svg:nth-child(2) { display: block; }
@@ -246,3 +250,6 @@ body.dark-mode main,
 body.dark-mode .contact-container {
     background-color: #121212;
 }
+
+body.dark-mode .title h2 { color: #FFFFFF; }
+body.dark-mode .title p { color: #CCCCCC; }

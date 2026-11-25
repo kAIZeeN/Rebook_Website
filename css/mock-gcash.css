@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #eef3f8;
+  color: #17233c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.checkout-card {
+  width: min(100%, 430px);
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 55px rgba(24, 50, 91, .12);
+}
+
+.checkout-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 28px;
+  background: #0875e1;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.gcash-logo {
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.checkout-content {
+  padding: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+  color: #0875e1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 23px;
+}
+
+.intro {
+  margin: 0 0 26px;
+  color: #718096;
+  line-height: 1.5;
+}
+
+.amount {
+  margin-bottom: 24px;
+  color: #0875e1;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.payment-details {
+  margin: 0;
+}
+
+.payment-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-top: 1px solid #e8edf4;
+}
+
+.payment-details dt {
+  color: #718096;
+}
+
+.payment-details dd {
+  max-width: 62%;
+  margin: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
+  font-weight: 600;
+}
+
+.payment-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.payment-actions button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.approve-button {
+  background: #0875e1;
+  color: #fff;
+}
+
+.approve-button:hover {
+  background: #0666c6;
+}
+
+.decline-button {
+  border: 1px solid #d8e1ed !important;
+  background: #fff;
+  color: #5e6c82;
+}
+
+.decline-button:hover {
+  background: #f7f9fc;
+}
+
+.demo-notice {
+  padding: 14px 22px;
+  background: #edf6ff;
+  color: #35638e;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 12px;
+  }
+
+  .checkout-content {
+    padding: 24px;
+  }
+}

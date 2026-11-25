@@ -28,6 +28,10 @@ This project is designed as a web development website for a community book-shari
 - `css/` — stylesheet files
 - `assets/` — images and design assets
 
+## Run locally
+
+Open `donatemoney.html` directly in a browser. The mock GCash checkout and confirmation are local HTML pages; no backend or payment account is required.
+
 ## How to Run
 
 Because this is a front-end static website, you can run it by opening any of the HTML files in a browser.

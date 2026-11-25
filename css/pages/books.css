@@ -68,11 +68,7 @@
 .books-page:has(.filter-input:focus-visible) { --focus: 1; }
 .filter-input:focus-visible + .pill, .filter-input:focus-visible + .category-card { outline: 3px solid var(--cyan); outline-offset: 2px; }
 
-/* hide books that don't match */
-.books-page:has(#s-available:checked) .book-item:not([data-status="available"]),
-.books-page:has(#s-reserved:checked)  .book-item:not([data-status="reserved"]),
-.books-page:has(#s-borrowed:checked)  .book-item:not([data-status="borrowed"]),
-.books-page:has(#c-arts:checked)      .book-item:not([data-cat="arts"]),
-.books-page:has(#c-education:checked) .book-item:not([data-cat="education"]),
-.books-page:has(#c-health:checked)    .book-item:not([data-cat="health"]),
-.books-page:has(#c-religion:checked)  .book-item:not([data-cat="religion"]) { display: none; }
+.carousel__btn, .carousel__dot { border: 0; padding: 0; font: inherit; cursor: pointer; }
+.carousel__btn { background: transparent; }
+.carousel__dot { appearance: none; }
+.books-results { min-height: 1.5em; padding: 0 1rem .75rem; color: var(--ink); }

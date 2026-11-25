@@ -1,0 +1,128 @@
+.admin-table-tools,
+.donation-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  margin: 14px 0;
+  color: #333;
+  font: 12px/1.4 Arial, sans-serif;
+}
+
+.admin-table-tools label,
+.donation-tools label,
+.admin-filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.admin-table-tools input,
+.admin-table-tools select,
+.donation-tools input,
+.donation-tools select,
+.admin-filter-label select {
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  background: #fff;
+  color: #161616;
+}
+
+.admin-feedback {
+  min-height: 1.4em;
+  margin: 8px 0;
+  color: #235537;
+  font: 12px/1.4 Arial, sans-serif;
+}
+
+.row-actions button { cursor: pointer; }
+.admin-action-button,
+.donation-action {
+  padding: 4px 7px;
+  border: 1px solid #9ba3ad;
+  border-radius: 4px;
+  background: #fff;
+  color: #172033;
+  font-size: 10px;
+}
+
+.admin-action-button:hover,
+.donation-action:hover { background: #e9f1ff; }
+.review-status { flex-basis: 100%; color: #555; font-size: 10px; }
+.admin-users__table .delete-action { cursor: pointer; color: #c62828; font-size: 10px; }
+.admin-books__table .row-actions,
+.admin-borrow__table .row-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 4px;
+}
+.admin-books__table .row-actions .approve-action,
+.admin-books__table .row-actions .reject-action,
+.admin-borrow__table .row-actions .approve-action,
+.admin-borrow__table .row-actions .reject-action {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 25px;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 4px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 8px;
+  line-height: 1.1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.admin-books__table .row-actions .approve-action { color: #087a32; }
+.admin-books__table .row-actions .reject-action { color: #bb2525; }
+.admin-books__table .row-actions .admin-action-button { min-width: 0; padding: 3px 4px; font-size: 8px; white-space: nowrap; }
+.admin-books__table .row-actions .review-status { grid-column: 1 / -1; text-align: center; }
+.admin-books__table td.book-title-cell {
+  display: table-cell;
+  position: relative;
+  padding-left: 36px;
+  vertical-align: middle;
+}
+.admin-books__table td.book-title-cell > .book-cover {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  float: none;
+  margin: 0;
+  transform: translateY(-50%);
+}
+.admin-books__table td.book-title-cell > span { display: block; }
+.admin-books__table tr[data-donated-book] td.book-title-cell { padding-left: 8px; }
+.donated-book-info { display: grid; gap: 3px; min-width: 0; text-align: left; overflow-wrap: anywhere; }
+.donated-book-info small { color: #555; font-size: 9px; }
+.admin-subnav .subnav-tab { cursor: pointer; font-family: inherit; }
+.borrow-main .book-search { margin-bottom: 10px; }
+.borrow-main .table-scroll { margin-top: 16px; }
+.admin-borrow__table .borrower-details--request { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; white-space: normal; overflow-wrap: anywhere; }
+.admin-borrow__table .borrower-details--request span { display: block; }
+.admin-borrow__table td.book-title-cell { display: table-cell; min-height: 0; }
+.admin-borrow__table td.book-title-cell .book-cover { float: left; margin: 0 8px 4px 0; }
+.admin-borrow__table td.book-title-cell > span { display: block; }
+.admin-borrow__table .review-status { display: inline-block; width: max-content; margin: 0 auto; padding: 2px 8px; border-radius: 999px; background: #f1f3f5; color: #4b5563; font-size: 9px; }
+.admin-borrow__table .row-actions .review-status { grid-column: 1 / -1; }
+.admin-filter-label { font: 12px/1.4 Arial, sans-serif; }
+
+.donation-records { margin-top: 2.5rem; }
+.donation-records > p { color: #4b5563; font-size: .9rem; }
+.donation-records .table-scroll { overflow-x: auto; }
+.donation-record-table { width: 100%; min-width: 860px; border-collapse: collapse; background: #fff; }
+.donation-record-table th,
+.donation-record-table td { padding: 10px; border: 1px solid #d8dce3; text-align: left; font-size: 12px; }
+.donation-record-table th { background: #eef2f8; }
+.donation-actions { display: flex; flex-wrap: wrap; gap: 5px; }
+
+@media (max-width: 600px) {
+  .admin-table-tools, .donation-tools { align-items: stretch; flex-direction: column; }
+  .admin-table-tools label, .donation-tools label { align-items: flex-start; flex-direction: column; }
+}

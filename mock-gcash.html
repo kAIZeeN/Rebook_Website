@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCash - Mock Checkout</title>
+    <link rel="stylesheet" href="css/mock-gcash.css">
+</head>
+<body>
+    <main class="checkout-card">
+        <header class="checkout-header">
+            <img src="assets/images/gcash-logo.png" alt="" class="gcash-logo">
+            <span>GCash</span>
+        </header>
+        <section class="checkout-content">
+            <p class="eyebrow">REBOOK DONATION</p>
+            <h1>Review your payment</h1>
+            <p class="intro">Check the details below, then choose how to continue.</p>
+
+            <div class="amount" id="payment-amount">₱0.00</div>
+            <dl class="payment-details">
+                <div><dt>Paying to</dt><dd>ReBook</dd></div>
+                <div><dt>Payment method</dt><dd>GCash Wallet</dd></div>
+                <div><dt>Donation frequency</dt><dd id="payment-frequency">One-time</dd></div>
+                <div><dt>Reference</dt><dd id="payment-reference"></dd></div>
+                <div><dt>Account</dt><dd id="payment-email"></dd></div>
+            </dl>
+
+            <div class="payment-actions">
+                <button class="approve-button" id="approve-payment" type="button">Approve payment</button>
+                <button class="decline-button" id="decline-payment" type="button">Decline</button>
+            </div>
+        </section>
+        <footer class="demo-notice">
+            MOCK CHECKOUT · This is a local demo. No real GCash payment will be made.
+        </footer>
+    </main>
+    <script src="javascript/mock-gcash.js"></script>
+</body>
+</html>
